@@ -8,6 +8,14 @@ echo ""
 git clone https://github.com/ruromero/interhack-ebadge.git /project/
 
 echo "=================================================="
+echo "Build NPM Frontend"
+echo "=================================================="
+cd /project/ebadge-frontend
+npm install
+bower install
+grunt 
+
+echo "=================================================="
 echo "Build Maven Backend"
 echo "=================================================="
 cd /project/ebadge-backend

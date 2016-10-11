@@ -17,7 +17,7 @@ node_version=4.6.0
 echo "=================================================="
 echo "RUN UPDATE"
 echo "=================================================="
-
+apt-add-repository ppa:git-core/ppa
 apt-get -qq update
 apt-get -qq upgrade
 
@@ -72,13 +72,14 @@ git --version
 echo "=================================================="
 echo "INSTALL NodeJS from repository"
 echo "=================================================="
-apt-get install -y nodejs npm
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+apt-get install -y nodejs
 npm --version
 
 echo "=================================================="
 echo "INSTALL Grunt using NPM"
 echo "=================================================="
-npm install -g yo grunt
+npm install -g grunt-cli bower yo generator-karma generator-angular
 
 echo "=================================================="
 echo "============= INSTALLATION COMPLETE =============="
