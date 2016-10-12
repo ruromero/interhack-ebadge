@@ -80,7 +80,7 @@ echo "=================================================="
 echo "INSTALL npm dependencies"
 echo "=================================================="
 npm install -g grunt-cli bower yo generator-karma generator-angular
-apt-get ruby-dev
+apt-get install -y ruby-dev
 gem install compass
 
 echo "=================================================="
