@@ -77,9 +77,11 @@ apt-get install -y nodejs
 npm --version
 
 echo "=================================================="
-echo "INSTALL Grunt using NPM"
+echo "INSTALL npm dependencies"
 echo "=================================================="
 npm install -g grunt-cli bower yo generator-karma generator-angular
+apt-get ruby-dev
+gem install compass
 
 echo "=================================================="
 echo "============= INSTALLATION COMPLETE =============="
