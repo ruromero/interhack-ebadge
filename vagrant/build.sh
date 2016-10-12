@@ -19,7 +19,7 @@ echo "=================================================="
 echo "Build Maven Backend"
 echo "=================================================="
 cd /project/ebadge-backend
-mvn clean install
+mvn clean package
 
 echo "=================================================="
 echo "============= BUILD COMPLETE =============="
@@ -36,4 +36,7 @@ echo "=================================================="
 echo "ebadge-backend:"
 echo "  cd /project/ebadge-backend"
 echo "  java -jar target/ebadge-backend.jar"
+echo "Access the application on:" 
+echo "   http://192.168.99.100:8080/hello"
+echo "   http://192.168.99.100:8080/rest/requests"
 echo "=================================================="
