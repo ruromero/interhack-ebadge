@@ -10,27 +10,36 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Visitor {
 
-    private @Id String id;
-    private @Version Long version;
-    private @LastModifiedDate Date date;
-    
-    private String firstName;
-    private String lastName;
-    
-    private String email;
-    private String mobile;
-    
-    private String idDocNumber;
-    private String validityIdDate;
-    private String dateOfBirth;
-    
-    private String visitDate;
-    private String nationality;
-    
-    private Boolean parkingRequired;
-    private String carPlate;
-    
-    private String comment;
+	private @Id String id;
+	private @Version Long version;
+	private @LastModifiedDate Date date;
+
+	private String firstName;
+	private String lastName;
+
+	private String email;
+	private String mobile;
+
+	private String idDocNumber;
+	private String validityIdDate;
+	private String dateOfBirth;
+
+	private String visitDate;
+	private String nationality;
+	private String expirationDate;
+
+	public String getExpirationDate() {
+		return expirationDate;
+	}
+
+	public void setExpirationDate(String expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	private Boolean parkingRequired;
+	private String carPlate;
+
+	private String comment;
 
 	public String getId() {
 		return id;
@@ -151,5 +160,5 @@ public class Visitor {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-    
+
 }
