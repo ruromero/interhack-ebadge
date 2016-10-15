@@ -15,8 +15,14 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'monospaced.qrcode'
   ])
+  .run(function ($rootScope, $location) {
+    $rootScope.$on('$routeChangeStart', function(next, current) {
+      $rootScope.route = $location.url();
+    });
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -24,10 +30,30 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/request', {
+        templateUrl: 'views/request.html',
+        controller: 'RequestCtrl',
+        controllerAs: 'ctrl'
+      })
+      .when('/grant', {
+        templateUrl: 'views/grant.html',
+        controller: 'GrantCtrl',
+        controllerAs: 'ctrl'
+      })
+      .when('/status', {
+        templateUrl: 'views/status.html',
+        controller: 'StatusCtrl',
+        controllerAs: 'ctrl'
+      })
+      .when('/qrcode', {
+        templateUrl: 'views/qrcode.html',
+        controller: 'QRCodeCtrl',
+        controllerAs: 'ctrl'
+      })
+      .when('/badge', {
+        templateUrl: 'views/badge.html',
+        controller: 'BadgeCtrl',
+        controllerAs: 'ctrl'
       })
       .otherwise({
         redirectTo: '/'

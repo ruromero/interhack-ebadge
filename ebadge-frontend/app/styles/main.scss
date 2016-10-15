@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
 // endbower
 
 .browsehappy {
@@ -41,6 +42,11 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  margin-top: 15px;
+}
+
+.footer .glyphicon-heart {
+  color: #ea2d2d;
 }
 
 .container-narrow > hr {
@@ -80,12 +86,54 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/*
+** QRCode 
+*/
+.qrcode {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/*
+** Grant
+*/
+.grant {
+  padding: 15px;
+}
+
+.grant li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.grant li .fa {
+  padding: 7px 10px;
+  font-size: 20px;
+  color: #444;
+  border-radius: 2px;
+}
+
+.grant li .fa:hover {
+  background: #eee;
+}
+
+.grant li .fa-check {
+  color: green;
+}
+
+.grant li .fa-times {
+  color: red;
+}
+
+.grant li .fa-check {
+  color: green;
 }
