@@ -35,7 +35,7 @@ public class VisitorResource {
 	@RequestMapping(value = "/check", method = RequestMethod.POST)
 	public String checkVisitor(@RequestParam(value = "visitor") Visitor visitor) {
 
-		// TODO here check the visitor
+		// TODO here check an already registered visitor
 
 		return "approved!";
 	}
