@@ -2,7 +2,6 @@ package eu.europa.ec.interhack.ebadge.resource;
 
 import java.awt.Color;
 import java.io.File;
-import java.nio.file.Files;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +69,8 @@ public class VisitorResource {
 			} catch (EncodingException e) {
 				e.printStackTrace();
 			}
+			
+			// TODO send email shipping the QR code
 
 			return new VisitorResponse("OK");
 		}
