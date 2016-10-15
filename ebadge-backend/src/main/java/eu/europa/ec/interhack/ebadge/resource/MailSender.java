@@ -47,6 +47,7 @@ public class MailSender {
 			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
 
 			System.out.println("Attaching files");
+			System.out.println("Working on file: "+qrCodeFile);
 			// QR code attachment
 			MimeBodyPart qrMessageBodyPart = new MimeBodyPart();
 			DataSource qrSource = new FileDataSource(qrCodeFile);
@@ -54,6 +55,7 @@ public class MailSender {
 			qrMessageBodyPart.setFileName(qrCodeFile);
 			
 			// PDF file attachment
+			System.out.println("working on file: "+pdfFile);
 			MimeBodyPart pdfMessageBodyPart = new MimeBodyPart();
 			DataSource pdfSource = new FileDataSource(pdfFile);
 			pdfMessageBodyPart.setDataHandler(new DataHandler(pdfSource));
