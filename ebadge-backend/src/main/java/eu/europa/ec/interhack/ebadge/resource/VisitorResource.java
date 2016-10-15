@@ -47,6 +47,8 @@ public class VisitorResource {
 	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse accept(@RequestParam(value = "visitor") Visitor visitor) {
 
+		visitor.setStatus("ACCEPTED");
+		
 		// crate the qr-code UPON VALIDATION
 		EncodingOptions options = new EncodingOptions();
 		options.setSize(340);
@@ -71,6 +73,7 @@ public class VisitorResource {
 	public VisitorResponse reject(@RequestParam(value = "visitor") Visitor visitor) {
 
 		// TODO handle rejection
+		visitor.setStatus("REJECTED");
 
 		return new VisitorResponse("OK");
 	}
