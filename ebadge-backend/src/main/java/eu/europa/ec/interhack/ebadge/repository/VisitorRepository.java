@@ -16,7 +16,7 @@ import java.util.Collection;
 @RepositoryRestResource(path = "visitors")
 public interface VisitorRepository extends MongoRepository<Visitor, String> {
 
-	List<Visitor> findByVisitorId(String visitorId);
+	List<Visitor> findByVisitorId(@Param("visitorId") String visitorId);
 
 	Collection<Visitor> findByStatusIn(@Param("statuses") String... status);
 
