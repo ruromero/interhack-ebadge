@@ -71,7 +71,7 @@ public class VisitorResource {
 	}
 
 	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public VisitorResponse accept(@RequestParam(value = "visitorId") String visitorId) {
+	public VisitorResponse accept(@RequestBody String visitorId) {
 
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
 
@@ -116,7 +116,7 @@ public class VisitorResource {
 	}
 
 	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public VisitorResponse reject(@RequestParam(value = "visitorId") String visitorId) {
+	public VisitorResponse reject(@RequestBody String visitorId) {
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
 
 		if (visitors == null || visitors.isEmpty()) {
