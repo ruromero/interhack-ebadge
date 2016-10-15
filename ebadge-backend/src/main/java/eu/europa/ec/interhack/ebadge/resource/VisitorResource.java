@@ -83,7 +83,7 @@ public class VisitorResource {
 		visitor.setStatus("ACCEPTED");
 		repo.save(visitor);
 
-		// crate the qr-code UPON VALIDATION
+		// create the qr-code UPON VALIDATION
 		EncodingOptions options = new EncodingOptions();
 		options.setSize(340);
 		options.setImageType(ImageType.PNG);
@@ -93,7 +93,7 @@ public class VisitorResource {
 
 		File out;
 		try {
-			out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
+			out = Encoder.encode(QRCODE_FOLDER, name, "http://52.168.135.250:9000/#/profiles/"+visitor.getVisitorId(), options);
 		} catch (EncodingException e) {
 			e.printStackTrace();
 			return new VisitorResponse("NOK").setComment("QR code generation failed");
