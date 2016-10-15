@@ -1,5 +1,9 @@
 package eu.europa.ec.interhack.ebadge.resource;
 
+import java.awt.Color;
+import java.io.File;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import eu.europa.ec.interhack.ebadge.dto.VisitorResponse;
 import eu.europa.ec.interhack.ebadge.model.Visitor;
+import eu.europa.ec.interhack.ebadge.qr.encode.Encoder;
+import eu.europa.ec.interhack.ebadge.qr.encode.EncodingException;
+import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions;
+import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions.ImageType;
 import eu.europa.ec.interhack.ebadge.repository.VisitorRepository;
 
 /**
@@ -17,6 +25,8 @@ import eu.europa.ec.interhack.ebadge.repository.VisitorRepository;
  */
 @RestController
 public class VisitorResource {
+
+	private static final String QRCODE_FOLDER = System.getProperty("user.dir");
 
 	@Autowired
 	private VisitorRepository repo;
@@ -33,10 +43,34 @@ public class VisitorResource {
 		return new VisitorResponse("OK");
 	}
 
-	@RequestMapping(value = "/check", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public VisitorResponse checkVisitor(@RequestParam(value = "visitor") Visitor visitor) {
+	@CrossOrigin(value = "*")
+	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public VisitorResponse accept(@RequestParam(value = "visitor") Visitor visitor) {
 
-		// TODO here check an already registered visitor
+		// crate the qr-code UPON VALIDATION
+		EncodingOptions options = new EncodingOptions();
+		options.setSize(340);
+		options.setImageType(ImageType.PNG);
+		options.setMargin(1);
+		options.setForegroundColor(Color.BLACK);
+		String name = "" + new Random().nextInt(99);
+
+		try {
+			File out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
+		} catch (EncodingException e) {
+			e.printStackTrace();
+		}
+
+		// TODO send email shipping the QR code
+
+		return new VisitorResponse("OK");
+	}
+
+	@CrossOrigin(value = "*")
+	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public VisitorResponse reject(@RequestParam(value = "visitor") Visitor visitor) {
+
+		// TODO handle rejection
 
 		return new VisitorResponse("OK");
 	}

@@ -27,7 +27,7 @@ public class Visitor {
 	private String visitDate;
 	private String nationality;
 	private String expirationDate;
-
+	
 	public String getExpirationDate() {
 		return expirationDate;
 	}
