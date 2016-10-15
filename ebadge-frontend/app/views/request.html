@@ -44,9 +44,9 @@
   </div>
 
   <div class="form-group">
-    <label for="hostname"><span class="mandatory">*</span> Visiting host</label>
-    <input type="text" class="form-control" id="hostname" placeholder="Enter the name of the host you're visiting" ng-required="required"
-      ng-model="ctrl.model.hostname">
+    <label for="host"><span class="mandatory">*</span> Visiting host</label>
+    <input type="text" class="form-control" id="host" placeholder="Enter the name of the host you're visiting" ng-required="required"
+      ng-model="ctrl.model.host">
   </div>
 
   <div class="form-group">
@@ -59,7 +59,9 @@
       </button>
 
       <ul class="dropdown-menu">
-        <li class="building" ng-repeat="building in ctrl.buildings" ng-click="ctrl.buildingSelected(building)"><div>{{ building.name }}</div></li>
+        <li class="building" ng-repeat="building in ctrl.buildings" ng-click="ctrl.buildingSelected(building)">
+          <div>{{ building.code }}</div>
+        </li>
       </ul>
     </div>
   </div>
