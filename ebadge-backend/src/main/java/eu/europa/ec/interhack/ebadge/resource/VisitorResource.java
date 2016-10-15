@@ -34,7 +34,6 @@ public class VisitorResource {
 	@Autowired
 	private VisitorRepository repo;
 
-	@CrossOrigin(value = "*")
 	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse register(@RequestBody Visitor visitor) {
 
@@ -47,7 +46,6 @@ public class VisitorResource {
 		return new VisitorResponse("OK");
 	}
 
-	@CrossOrigin(value = "*")
 	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse accept(@RequestParam(value = "visitor") Visitor visitor) {
 
@@ -80,12 +78,11 @@ public class VisitorResource {
 		}
 
 		// send email shipping the QR code and PDF
-		new MailSender().sendEmail(visitor.getEmail(), out.getAbsolutePath(), pdfFile.getAbsolutePath());
+		new MailSender().sendEmail(visitor.getEmail(), "[edBage - InterHack] Your eBadge is ready", out.getAbsolutePath(), pdfFile.getAbsolutePath());
 
 		return new VisitorResponse("OK");
 	}
 
-	@CrossOrigin(value = "*")
 	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse reject(@RequestParam(value = "visitor") Visitor visitor) {
 
@@ -93,6 +90,8 @@ public class VisitorResource {
 		visitor.setStatus("REJECTED");
 		repo.save(visitor);
 		
+		new MailSender().sendEmail(visitor.getEmail(), "[edBage - InterHack] Your request has been rejected");
+		
 		return new VisitorResponse("OK");
 	}
-}
+} 
