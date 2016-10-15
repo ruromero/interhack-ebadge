@@ -8,7 +8,7 @@
  * Controller of the ebadgeFrontendApp
  */
 angular.module('ebadgeFrontendApp')
-  .controller('RequestCtrl', [ 'backEnd', function (backEnd) {
+  .controller('RequestCtrl', [ '$location',  'backEnd', function ($location, backEnd) {
     this.selectedBuilding = { name: 'Select a building' };
 
     this.model = {
@@ -31,6 +31,8 @@ angular.module('ebadgeFrontendApp')
     }
 
     this.submit = function () {
-      backEnd.call('POST', 'visitor/register', this.model);
+      backEnd.call('POST', 'visitor/register', this.model).then((response) => {
+        $location.path('/status/ok');
+      });
     }
   }]);

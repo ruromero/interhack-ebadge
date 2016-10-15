@@ -30,7 +30,7 @@ public class MailSender {
 		props.put("mail.smtp.port", "25");
 	}
 
-	public void sendEmail(String toEmail, String subject, String qrCodeFile, String pdfFile) {
+	public void sendEmail(String toEmail, String subject, String content, String qrCodeFile, String pdfFile) {
 		System.out.println("preparing email...");
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
@@ -44,7 +44,7 @@ public class MailSender {
 			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
 			message.setSubject(SUBJECT_PREFIX + subject);
-			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
+			message.setText(content);
 
 			System.out.println("Attaching files");
 			System.out.println("Working on file: "+qrCodeFile);
