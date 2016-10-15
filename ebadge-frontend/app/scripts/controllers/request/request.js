@@ -22,8 +22,10 @@ angular.module('ebadgeFrontendApp')
       host: 'Jean-Claude Van Damme'
     }
 
-    this.buildings = backEnd.call('GET', 'buildings').then(function (response) {
-      //console.log(response._embedded.buildings);
+    backEnd.call('GET', 'buildings').then(function (response) {
+      //this.buildings = response._embedded.buildings;
+      //this.buildings = response._embedded.buildings;
+      //this.buildings.map(function (building) { console.log(building)});
     });
 
     this.buildingSelected = function (building) {
@@ -33,6 +35,6 @@ angular.module('ebadgeFrontendApp')
     this.submit = function () {
       console.log('submitted', this.model);
 
-      //backEnd.call('POST', 'register', this.model);
+      backEnd.call('POST', 'visitor/register', this.model);
     }
   }]);
