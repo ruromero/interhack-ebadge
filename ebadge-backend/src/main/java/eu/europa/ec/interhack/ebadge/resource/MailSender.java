@@ -18,6 +18,8 @@ import javax.mail.internet.MimeMultipart;
 
 public class MailSender {
 
+	private static final String SUBJECT_PREFIX = "[edBage - InterHack]";
+	
 	private Properties props;
 
 	public MailSender() {
@@ -41,7 +43,7 @@ public class MailSender {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
-			message.setSubject(subject);
+			message.setSubject(SUBJECT_PREFIX + subject);
 			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
 
 			System.out.println("Attaching files");
@@ -86,7 +88,7 @@ public class MailSender {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
-			message.setSubject(subject);
+			message.setSubject(SUBJECT_PREFIX + subject);
 			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
 
 			System.out.println("sending email...");
