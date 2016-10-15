@@ -55,7 +55,7 @@ angular
         controller: 'BadgeCtrl',
         controllerAs: 'ctrl'
       })
-      .when('/profiles', {
+      .when('/profiles/:visitorId', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
         controllerAs: 'ctrl'
