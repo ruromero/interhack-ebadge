@@ -44,37 +44,34 @@ public class VisitorResource {
 	}
 
 	@CrossOrigin(value = "*")
-	@RequestMapping(value = "/check", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public VisitorResponse checkVisitor(@RequestParam(value = "visitor") Visitor visitor) {
+	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public VisitorResponse accept(@RequestParam(value = "visitor") Visitor visitor) {
 
-		// TODO here check an already registered visitor
+		// crate the qr-code UPON VALIDATION
+		EncodingOptions options = new EncodingOptions();
+		options.setSize(340);
+		options.setImageType(ImageType.PNG);
+		options.setMargin(1);
+		options.setForegroundColor(Color.BLACK);
+		String name = "" + new Random().nextInt(99);
 
-		// TODO query the db to check whether the user exists or not
-		// further checks
-
-		boolean validationOk = true;
-
-		if (validationOk) {
-
-			// crate the qr-code UPON VALIDATION
-			EncodingOptions options = new EncodingOptions();
-			options.setSize(340);
-			options.setImageType(ImageType.PNG);
-			options.setMargin(1);
-			options.setForegroundColor(Color.BLACK);
-			String name = "" + new Random().nextInt(99);
-
-			try {
-				File out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
-			} catch (EncodingException e) {
-				e.printStackTrace();
-			}
-			
-			// TODO send email shipping the QR code
-
-			return new VisitorResponse("OK");
+		try {
+			File out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
+		} catch (EncodingException e) {
+			e.printStackTrace();
 		}
-		
-		return new VisitorResponse("NOK");
+
+		// TODO send email shipping the QR code
+
+		return new VisitorResponse("OK");
+	}
+
+	@CrossOrigin(value = "*")
+	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public VisitorResponse reject(@RequestParam(value = "visitor") Visitor visitor) {
+
+		// TODO handle rejection
+
+		return new VisitorResponse("OK");
 	}
 }
