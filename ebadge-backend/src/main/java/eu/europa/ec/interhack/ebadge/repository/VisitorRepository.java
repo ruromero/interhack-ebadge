@@ -14,7 +14,7 @@ import java.util.Collection;
  * Created by rromero on 10/10/16.
  */
 @RepositoryRestResource(path = "visitors")
-public interface VisitorRepository extends MongoRepository<Visitor, Long> {
+public interface VisitorRepository extends MongoRepository<Visitor, String> {
 
 	List<Visitor> findByVisitorId(String visitorId);
 
