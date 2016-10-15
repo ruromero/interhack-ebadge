@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name ebadgeFrontendApp.controller:MainCtrl
+ * @name ebadgeFrontendApp.controller:AboutCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the ebadgeFrontendApp
  */
 angular.module('ebadgeFrontendApp')
-  .controller('MainCtrl', function () {
+  .controller('QRCodeCtrl', function () {
   });
