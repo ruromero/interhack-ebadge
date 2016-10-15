@@ -14,15 +14,23 @@ import java.util.Date;
 @Document
 public class Building {
 
-    @Id
-    private String code;
+    @Id private String id;
     private @Version Long version;
     private @LastModifiedDate Date date;
+    private String code;
     private String name;
     private String address;
     private Integer postalCode;
     private Collection<String> occupiers;
     private Collection<String> telephones;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Long getVersion() {
         return version;

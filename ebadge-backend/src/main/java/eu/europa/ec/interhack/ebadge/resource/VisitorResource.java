@@ -7,7 +7,6 @@ import java.util.Random;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import eu.europa.ec.interhack.ebadge.dto.VisitorResponse;
-import eu.europa.ec.interhack.ebadge.model.Visitor;
 import eu.europa.ec.interhack.ebadge.model.CommonData.Institution;
+import eu.europa.ec.interhack.ebadge.model.Visitor;
 import eu.europa.ec.interhack.ebadge.qr.encode.Encoder;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingException;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions;
@@ -36,7 +35,6 @@ public class VisitorResource {
 	@Autowired
 	private VisitorRepository repo;
 
-	@CrossOrigin(value = "*")
 	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse register(@RequestBody Visitor visitor) {
 
@@ -61,7 +59,6 @@ public class VisitorResource {
 		}
 	}
 
-	@CrossOrigin(value = "*")
 	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse accept(@RequestParam(value = "visitor") Visitor visitor) {
 
@@ -94,12 +91,11 @@ public class VisitorResource {
 		}
 
 		// send email shipping the QR code and PDF
-		new MailSender().sendEmail(visitor.getEmail(), out.getAbsolutePath(), pdfFile.getAbsolutePath());
+		new MailSender().sendEmail(visitor.getEmail(), "Your eBadge is ready", out.getAbsolutePath(), pdfFile.getAbsolutePath());
 
 		return new VisitorResponse("OK");
 	}
 
-	@CrossOrigin(value = "*")
 	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse reject(@RequestParam(value = "visitor") Visitor visitor) {
 
@@ -107,10 +103,10 @@ public class VisitorResource {
 		repo.save(visitor);
 		
 		// Send mail and notify the visitor of rejection
-//		new MailSender().sendEma
 		String mailSubject = "Your request to visit the European insititutions has been rejected";
 		String mailBody = String.format("Dear %s,\\n\\nYour request to visit %s has been rejected.\\n\\nKind regards,\\nThe eBadge wizards",  String.format("%s %s", visitor.getFirstName(), visitor.getLastName()), visitor.getHost());
+		new MailSender().sendEmail(visitor.getEmail(), "Your request has been rejected");
 		
 		return new VisitorResponse("OK");
 	}
-}
+} 

@@ -18,22 +18,24 @@ import javax.mail.internet.MimeMultipart;
 
 public class MailSender {
 
+	private static final String SUBJECT_PREFIX = "[edBage - InterHack]";
+	
 	private Properties props;
 
 	public MailSender() {
 		props = new Properties();
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
-		props.put("mail.smtp.host", "ssl0.ovh.net");
-		props.put("mail.smtp.port", "465");
+		props.put("mail.smtp.host", "smtp.sendgrid.net");
+		props.put("mail.smtp.port", "25");
 	}
 
-	public void sendEmail(String toEmail, String qrCodeFile, String pdfFile) {
+	public void sendEmail(String toEmail, String subject, String qrCodeFile, String pdfFile) {
 		System.out.println("preparing email...");
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("ebadge@damas.be", "ebadge!01");
+				return new PasswordAuthentication("azure_29d137e2b8785ad1119f54150755dbb5@azure.com", "InterHack2016_smtp");
 			}
 		});
 
@@ -41,9 +43,10 @@ public class MailSender {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
-			message.setSubject("Ebadge - InterHack: Your eBadge is ready");
+			message.setSubject(SUBJECT_PREFIX + subject);
 			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
 
+			System.out.println("Attaching files");
 			// QR code attachment
 			MimeBodyPart qrMessageBodyPart = new MimeBodyPart();
 			DataSource qrSource = new FileDataSource(qrCodeFile);
@@ -71,4 +74,32 @@ public class MailSender {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void sendEmail(String toEmail, String subject) {
+		System.out.println("preparing email...");
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("azure_29d137e2b8785ad1119f54150755dbb5@azure.com", "InterHack2016_smtp");
+			}
+		});
+
+		try {
+			MimeMessage message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+			message.setSubject(SUBJECT_PREFIX + subject);
+			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
+
+			System.out.println("sending email...");
+			Transport.send(message);
+
+			System.out.println("Email sent successfully");
+
+		} catch (MessagingException e) {
+			System.out.println("Something went wrong while trying to send the email");
+			throw new RuntimeException(e);
+		}
+	}
+	
 }
