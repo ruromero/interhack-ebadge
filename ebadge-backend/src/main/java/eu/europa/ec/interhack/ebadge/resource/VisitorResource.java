@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import eu.europa.ec.interhack.ebadge.dto.VisitorIdResponse;
 import eu.europa.ec.interhack.ebadge.dto.VisitorResponse;
 import eu.europa.ec.interhack.ebadge.model.CommonData.Institution;
 import eu.europa.ec.interhack.ebadge.model.Visitor;
@@ -69,13 +70,13 @@ public class VisitorResource {
 		}
 	}
 
-	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
-	public VisitorResponse accept(@RequestBody String visitorId) {
-		System.out.println("handling accept request for " +visitorId);
-		List<Visitor> visitors = repo.findByVisitorId(visitorId);
+	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public VisitorResponse accept(@RequestBody VisitorIdResponse visitorId) {
+		System.out.println("handling accept request for " +visitorId.getVisitorId());
+		List<Visitor> visitors = repo.findByVisitorId(visitorId.getVisitorId());
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId+ " not found");
+			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId.getVisitorId() + " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
@@ -114,13 +115,13 @@ public class VisitorResource {
 		return new VisitorResponse("OK");
 	}
 
-	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
-	public VisitorResponse reject(@RequestBody String visitorId) {
-		System.out.println("handling reject request for " +visitorId);
-		List<Visitor> visitors = repo.findByVisitorId(visitorId);
+	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public VisitorResponse reject(@RequestBody VisitorIdResponse visitorId) {
+		System.out.println("handling reject request for " +visitorId.getVisitorId());
+		List<Visitor> visitors = repo.findByVisitorId(visitorId.getVisitorId());
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId+ " not found");
+			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId.getVisitorId()+ " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
