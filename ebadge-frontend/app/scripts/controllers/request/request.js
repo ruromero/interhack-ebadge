@@ -9,4 +9,7 @@
  */
 angular.module('ebadgeFrontendApp')
   .controller('RequestCtrl', function () {
+    this.submit = function () {
+      console.log('submitted');
+    }
   });
