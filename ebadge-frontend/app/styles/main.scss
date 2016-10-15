@@ -64,6 +64,18 @@ body {
   }
 }
 
+.jumbotron .fa-qrcode {
+  font-size: 120px;
+}
+
+.jumbotron .subtitle {
+  font-size: 20px;
+}
+
+.jumbotron h1 {
+  font-size: 30px;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -103,7 +115,7 @@ body {
 }
 
 /*
-**
+** Request
 */
 .request .mandatory {
   color: red;
