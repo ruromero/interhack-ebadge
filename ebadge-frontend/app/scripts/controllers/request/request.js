@@ -19,11 +19,10 @@ angular.module('ebadgeFrontendApp')
       { name: "555" },
       { name: "666" },
     ];
-    /*
-    this.buildingList = backEnd.call('GET', 'buildingList').then(function (buildingList) {
-      console.log(buildingList);
+
+    this.buildings = backEnd.call('GET', 'buildings').then(function (buildings) {
+      console.log(buildings);
     });
-    */
 
     this.buildingSelected = function (building) {
       this.selectedBuilding = building;

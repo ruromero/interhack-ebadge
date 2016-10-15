@@ -28,6 +28,16 @@ public class Visitor {
 	private String nationality;
 	private String expirationDate;
 	
+	private String host;
+	
+	public String getHost(){
+		return host;
+	}
+	
+	public void setHost(String host){
+		this.host = host;
+	}
+
 	private String status; // REJECTED, APPROVED
 	
 	public String getExpirationDate() {
