@@ -19,7 +19,7 @@ angular
     'monospaced.qrcode'
   ])
   .run(function ($rootScope, $location) {
-    $rootScope.$on('$routeChangeStart', function(next, current) {
+    $rootScope.$on('$routeChangeStart', function() {
       $rootScope.route = $location.url();
     });
   })
@@ -28,7 +28,7 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'ctrl'
       })
       .when('/request', {
         templateUrl: 'views/request.html',

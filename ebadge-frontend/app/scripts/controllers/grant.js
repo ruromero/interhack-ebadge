@@ -8,7 +8,7 @@
  * Controller of the ebadgeFrontendApp
  */
 angular.module('ebadgeFrontendApp')
-  .controller('GrantCtrl', [ 'backEnd', function (backEnd) {
+  .controller('GrantCtrl', [ function () {
     this.requests = [
       { id: 1, name: '1111' },
       { id: 2, name: '2222' },
@@ -20,5 +20,5 @@ angular.module('ebadgeFrontendApp')
 
     this.requestSelected = function (request) {
       console.log('request:', request);
-    }
+    };
   }]);
