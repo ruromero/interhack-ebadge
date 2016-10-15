@@ -14,7 +14,7 @@ import java.util.Date;
 @Document
 public class Building {
 
-    @Id private Long id;
+    @Id private String id;
     private @Version Long version;
     private @LastModifiedDate Date date;
     private String code;
@@ -24,11 +24,11 @@ public class Building {
     private Collection<String> occupiers;
     private Collection<String> telephones;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
