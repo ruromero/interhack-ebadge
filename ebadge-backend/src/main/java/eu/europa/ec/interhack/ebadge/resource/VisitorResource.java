@@ -38,6 +38,7 @@ public class VisitorResource {
 		// TODO placeholder for validation
 
 		// blindly save it to the db for the moment
+		visitor.setStatus("PENDING");
 		repo.insert(visitor);
 
 		return new VisitorResponse("OK");
@@ -48,6 +49,7 @@ public class VisitorResource {
 	public VisitorResponse accept(@RequestParam(value = "visitor") Visitor visitor) {
 
 		visitor.setStatus("ACCEPTED");
+		repo.save(visitor);
 		
 		// crate the qr-code UPON VALIDATION
 		EncodingOptions options = new EncodingOptions();
@@ -74,7 +76,8 @@ public class VisitorResource {
 
 		// TODO handle rejection
 		visitor.setStatus("REJECTED");
-
+		repo.save(visitor);
+		
 		return new VisitorResponse("OK");
 	}
 }
