@@ -1,0 +1,103 @@
+<form name="form" class="request" ng-submit="ctrl.submit()">
+  <div class="form-group">
+    <label for="firstname"><span class="mandatory">*</span> First name</label>
+
+    <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" ng-required="required"
+      ng-model="ctrl.model.firstName">
+  </div>
+
+  <div class="form-group">
+    <label for="lastname"><span class="mandatory">*</span> Last name</label>
+
+    <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" ng-required="required"
+      ng-model="ctrl.model.lastName">
+  </div>
+
+  <div class="form-group">
+    <label for="email"><span class="mandatory">*</span> Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter your email" ng-required="required"
+      ng-model="ctrl.model.email">
+  </div>
+
+  <div class="form-group">
+    <label for="mobile">Mobile phone number</label>
+    <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile phone number"
+      ng-model="ctrl.model.mobile">
+  </div>
+
+  <div class="form-group">
+    <label for="idDocNumber"><span class="mandatory">*</span> Official document ID</label>
+    <input type="text" class="form-control" id="idDocNumber" placeholder="Enter your ID" ng-required="required"
+      ng-model="ctrl.model.idDocNumber">
+  </div>
+
+  <div class="form-group">
+    <label for="validityIdDate"><span class="mandatory">*</span> ID validity date</label>
+    <input type="date" class="form-control" id="validityIdDate" placeholder="Enter the validity date of your ID" ng-required="required"
+      ng-model="ctrl.model.validityIdDate">
+  </div>
+
+  <div class="form-group">
+    <label for="dateOfBirth">Date of birth</label>
+    <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter your birthdate"
+      ng-model="ctrl.model.dateOfBirth">
+  </div>
+
+  <div class="form-group">
+    <label for="host"><span class="mandatory">*</span> Visiting host</label>
+    <input type="text" class="form-control" id="host" placeholder="Enter the name of the host you're visiting" ng-required="required"
+      ng-model="ctrl.model.host">
+  </div>
+
+  <div class="form-group buildings">
+    <label><span class="mandatory">*</span> Building</label>
+
+    <div class="btn-group">
+
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ ctrl.selectedBuilding.name }} <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <li class="building" ng-repeat="building in ctrl.buildings" ng-click="ctrl.buildingSelected(building)">
+          <div>{{ building.code }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="office">Office</label>
+    <input type="text" class="form-control" id="office" placeholder="Enter the floor and the number of the office"
+      ng-model="ctrl.model.office">
+  </div>
+
+  <div class="form-group">
+    <label for="visitDate">Visiting date</label>
+    <input type="date" class="form-control" id="visitDate" placeholder="Enter the visiting date"
+      ng-model="ctrl.model.visitingDate">
+  </div>
+
+  <div class="form-group">
+    <label for="nationality">Nationality</label>
+    <input type="text" class="form-control" id="nationality" placeholder="Enter your nationality"
+      ng-model="ctrl.model.nationality">
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="ctrl.model.parkingRequired"> Parking required
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="plate">Car plate</label>
+    <input type="text" class="form-control" id="plate" placeholder="Enter your car plate" ng-model="ctrl.model.plate">
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <input type="text" class="form-control" id="nationality" placeholder="Any comment?" ng-model="ctrl.model.comment">
+  </div>
+
+</form>
