@@ -26,7 +26,7 @@
 <![endif]-->
 <!--[if IE 8]><html class="ie8"><![endif]-->
 
-<script type="text/javascript" src="Login_files/jquery-1.js" charset="UTF-8"></script><script type="text/javascript" src="Login_files/static-validator_en_4.js" charset="UTF-8"></script><script type="text/javascript" src="Login_files/screen_en_4.js" charset="UTF-8"></script><script type="text/javascript" src="Login_files/locval_en_4.js" charset="UTF-8"></script>
+
 <title>Login</title>
 </head>
 <!-- END HTML Header -->
@@ -145,7 +145,7 @@ unchanged.</p>
 </div>
 <!-- <status>READY_FOR_LOGIN</status> --><!-- <domain>eu.europa.ec</domain> -->
 
-<form method="post" id="loginForm" name="strongLoginForm" accept-charset="UTF-8" action="/login" enctype="application/x-www-form-urlencoded;charset=UTF-8" class="focusable">
+<form method="get" id="loginForm" name="strongLoginForm" accept-charset="UTF-8" action="/#/badge" enctype="application/x-www-form-urlencoded;charset=UTF-8" class="focusable">
     <input name="TxId" value="ECAS_TX-1344784-ph3zkM3LguygFzLEK9MN0nmbjl3cPg4fOfY7XeFDbXoibJvmvCCzRn9QKgvQ3HaNd73CaaonMzzPQ0cQXtk2RaG-PHslUMVSXYCHaHCUZDcX4e-7duC9CXRIlQKONzZFc2FeMXyKr4VhNSDKWakWJSAri7" type="hidden">
     <input name="lt" value="LT-267925-yLbY4S5p1Nztq38aEfOGg1vPGKoYafOBaLSZbs3EhakREtclP8Os2VQQJcWZzh3we2AAPXkJzRpkKmUnNwfQ740-PHslUMVSXYCpw1XCTP7Vj0-DYy6ksmIm1985QVokmoIPiO2zV4vpvQqakltTSr8KzLm" id="lt" type="hidden"><input name="domain" value="eu.europa.ec" id="domain" type="hidden"><input name="loginRequestId" value="ECAS_LR-1566084-zabuq0D7UhGUgkm5kzQTvFfHHR5KxJzgLDy2nNYDQc9jTwLkVMW0QtAzQJpVlH5j0Px7okgwAUvLa5i1TZ9dSzc-PHslUMVSXYCAm7B34NUWAK-JusnzzeSoSxNQYVqn480NyRgngt03n3tMyC8ZK4YBdgW" id="loginRequestId" type="hidden"><input name="useDefaultStrength" value="true" id="useDefaultStrength" type="hidden"><input name="timeZone" value="GMT+02:00" id="timeZone" type="hidden"><input name="selfHost" value="ecas.ec.europa.eu" id="selfHost" type="hidden"><input name="disloc" value="h t t p s : / / e c a s . e c . e u r o p a . e u / c a s / l o g i n ? l o g i n R e q u e s t I d = E C A S _ L R - 1 5 6 6 0 8 4 - z a b u q 0 D 7 U h G U g k m 5 k z Q T v F f H H R 5 K x J z g L D y 2 n N Y D Q c 9 j T w L k V M W 0 Q t A z Q J p V l H 5 j 0 P x 7 o k g w A U v L a 5 i 1 T Z 9 d S z c - P H s l U M V S X Y C A m 7 B 3 4 N U W A K - J u s n z z e S o S x N Q Y V q n 4 8 0 N y R g n g t 0 3 n 3 t M y C 8 Z K 4 Y B d g W" id="disloc" type="hidden"><input name="secTek" value="ECAS_TX-SEC-173949-P4CAdV1VBBSdzt0sJ5zzba2HKzpyaUWyJzozb8dEkuCOZiGHURNN5YxjNAzGIfOAaIiCR8ohx78kR92Ui0lC0ZQS-PHslUMVSXYCK008Ddw9nNS-zpyU8f15D3icIPzQNvXFkDTijhzaheS3zqIUEzKvMInGm" id="secTek" type="hidden"><script type="text/javascript" src="Login_files/form_en_4.js" charset="UTF-8"></script><label for="username">Username or e-mail address</label>
 <input name="username" tabindex="1" value="damaspi" id="username" title="Username or e-mail address" type="text"><label for="password">Password</label>
@@ -161,7 +161,7 @@ unchanged.</p>
 
         <input name="showAccountDetails" accesskey="A" tabindex="5" value="true" id="showAccountDetails" title="View my ECAS account details after logging me in" type="checkbox"><label for="showAccountDetails" class="checkbox">View my ECAS account details after logging me in</label>
 
-    </div><input name="_submit" accesskey="S" tabindex="6" value="Login!" title="Login!" type="submit">
+    </div><input name="_submit" accesskey="S" tabindex="6" value="Login!" title="Login!" type="submit" onclick="window.location('/#/badge')">
     <div class="clear"></div>
 </form>
 
