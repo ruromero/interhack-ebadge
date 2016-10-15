@@ -13,7 +13,7 @@ angular.module('ebadgeFrontendApp')
     var ctrl = this;
     this.model = {};
 
-    $http.get(backEndUrl + 'visitors/search/findByVisitorId?visitorId=ba2a08d9-c35a-4c80-bead-56d755be1b0f').then(function(data) {
+    $http.get(backEndUrl + 'visitors/search/findByVisitorId?visitorId=ee429203-4579-4bfb-8e7b-64d737d485db').then(function(data) {
       ctrl.model = data.data._embedded.visitors[0];
     });
 
