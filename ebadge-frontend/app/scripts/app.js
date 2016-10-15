@@ -55,6 +55,11 @@ angular
         controller: 'BadgeCtrl',
         controllerAs: 'ctrl'
       })
+      .when('/profiles', {
+        templateUrl: 'views/profiles.html',
+        controller: 'ProfileCtrl',
+        controllerAs: 'ctrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
