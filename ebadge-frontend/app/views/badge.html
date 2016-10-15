@@ -1,1 +1,41 @@
-BADGE
+<form name="form" class="request" ng-submit="ctrl.submit()">
+  <div class="form-group">
+    <label for="firstname"><span class="mandatory">*</span> First name</label>
+
+    <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" ng-required="required"
+      ng-model="ctrl.model.firstName">
+  </div>
+
+  <div class="form-group">
+    <label for="lastname"><span class="mandatory">*</span> Last name</label>
+
+    <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" ng-required="required"
+      ng-model="ctrl.model.lastName">
+  </div>
+
+  <div class="form-group">
+    <label for="email"><span class="mandatory">*</span> Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter your email" ng-required="required"
+      ng-model="ctrl.model.email">
+  </div>
+
+  <div class="form-group">
+    <label for="mobile">Mobile phone number</label>
+    <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile phone number"
+      ng-model="ctrl.model.mobile">
+  </div>
+
+  <div class="form-group">
+    <label for="employeeNumber"><span class="mandatory">*</span> Employee number</label>
+    <input type="text" class="form-control" id="employeeNumber" placeholder="Enter the employee number for the Official you're visiting" ng-required="required"
+      ng-model="ctrl.model.employeeNumber">
+  </div>
+
+  <div class="form-group">
+    <label for="validityIdDate"><span class="mandatory">*</span> ID validity date</label>
+    <input type="date" class="form-control" id="validityIdDate" placeholder="Enter the validity date of your ID" ng-required="required"
+      ng-model="ctrl.model.validityIdDate">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
