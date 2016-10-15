@@ -2,7 +2,6 @@ package eu.europa.ec.interhack.ebadge.qr;
 
 import java.awt.Color;
 import java.io.File;
-import java.util.Date;
 import java.util.Random;
 
 import eu.europa.ec.interhack.ebadge.model.CommonData.Institution;
@@ -38,9 +37,10 @@ public class QRTestApp {
 
 		Visitor userData = new Visitor();
 		userData.setFirstName("Daniel");
-		userData.setLastName("Chiriță");
+		userData.setLastName("Chirita");
 		userData.setVisitDate("2016-10-15");
 		userData.setExpirationDate("2016-10-25");
-		PDFGenerator.generate(userData, fileName, Institution.COUNCIL);
+		userData.setIdDocNumber("RO 123765");
+		PDFGenerator.generate(userData, fileName, Institution.EC);
 	}
 }
