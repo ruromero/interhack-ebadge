@@ -18,7 +18,7 @@ import javax.mail.internet.MimeMultipart;
 
 public class MailSender {
 
-	private static final String SUBJECT_PREFIX = "[edBage - InterHack]";
+	private static final String SUBJECT_PREFIX = "[eBadge - InterHack]";
 	
 	private Properties props;
 
