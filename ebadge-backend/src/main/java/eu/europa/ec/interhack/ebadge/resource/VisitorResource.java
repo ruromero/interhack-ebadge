@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import eu.europa.ec.interhack.ebadge.dto.VisitorResponse;
 import eu.europa.ec.interhack.ebadge.model.Visitor;
+import eu.europa.ec.interhack.ebadge.model.CommonData.Institution;
 import eu.europa.ec.interhack.ebadge.qr.encode.Encoder;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingException;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions.ImageType;
+import eu.europa.ec.interhack.ebadge.qr.pdf.PDFGeneratingException;
+import eu.europa.ec.interhack.ebadge.qr.pdf.PDFGenerator;
 import eu.europa.ec.interhack.ebadge.repository.VisitorRepository;
 
 /**
@@ -67,10 +70,17 @@ public class VisitorResource {
 			return new VisitorResponse("NOK").setComment("QR code generation failed");
 		}
 		
-		// TODO generate the pdf file
+		// generate the pdf file
+		File pdfFile;
+		try {
+			pdfFile = PDFGenerator.generate(QRCODE_FOLDER, name, visitor, out.getAbsolutePath(), Institution.COUNCIL);
+		} catch (PDFGeneratingException e) {
+			e.printStackTrace();
+			return new VisitorResponse("NOK").setComment("PDF generation failed");
+		}
 
-		// TODO send email shipping the QR code
-		new MailSender().sendEmail(visitor.getEmail(), out.getAbsolutePath(), "");
+		// send email shipping the QR code and PDF
+		new MailSender().sendEmail(visitor.getEmail(), out.getAbsolutePath(), pdfFile.getAbsolutePath());
 
 		return new VisitorResponse("OK");
 	}
