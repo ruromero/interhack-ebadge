@@ -8,6 +8,6 @@ import eu.europa.ec.interhack.ebadge.model.Visitor;
 /**
  * Created by rromero on 10/10/16.
  */
-@RepositoryRestResource(path = "requests")
+@RepositoryRestResource(path = "visitors")
 public interface VisitorRepository extends MongoRepository<Visitor, Long> {
 }

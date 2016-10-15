@@ -109,6 +109,15 @@ body {
   color: red;
 } 
 
+.request .building {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.request .building:hover {
+  background: #eee;
+}
+
 /*
 ** Grant
 */

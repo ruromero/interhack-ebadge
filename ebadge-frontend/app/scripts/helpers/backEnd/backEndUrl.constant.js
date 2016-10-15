@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('ebadgeFrontendApp').constant('backEndUrl', 'http://192.168.99.100:9000/');
+angular.module('ebadgeFrontendApp').constant('backEndUrl', 'http://10.40.11.215:8080/');
