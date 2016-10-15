@@ -20,16 +20,16 @@ angular.module('ebadgeFrontendApp')
     this.accept = function (request) {
       console.log('accept:', request);
 
-      //backEnd.call('POST', 'accept').then((response) => {
-      //  console.log(response);
-      //});
+      backEnd.call('POST', 'accept', request).then((response) => {
+        console.log(response);
+      });
     };
 
     this.reject = function (request) {
       console.log('reject:', request);
 
-      //backEnd.call('POST', 'reject').then((response) => {
-      //  console.log(response);
-      //});
+      backEnd.call('POST', 'reject', request).then((response) => {
+        console.log(response);
+      });
     };
   }]);
