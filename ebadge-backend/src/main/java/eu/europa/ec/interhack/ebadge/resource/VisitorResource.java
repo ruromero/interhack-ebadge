@@ -69,7 +69,7 @@ public class VisitorResource {
 		}
 	}
 
-	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
 	public VisitorResponse accept(@RequestBody String visitorId) {
 		System.out.println("handling accept request for " +visitorId);
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
@@ -114,7 +114,7 @@ public class VisitorResource {
 		return new VisitorResponse("OK");
 	}
 
-	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
 	public VisitorResponse reject(@RequestBody String visitorId) {
 		System.out.println("handling reject request for " +visitorId);
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
