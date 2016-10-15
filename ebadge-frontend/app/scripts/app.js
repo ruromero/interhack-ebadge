@@ -56,7 +56,7 @@ angular
         controllerAs: 'ctrl'
       })
       .when('/profiles', {
-        templateUrl: 'views/profiles.html',
+        templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
         controllerAs: 'ctrl'
       })
