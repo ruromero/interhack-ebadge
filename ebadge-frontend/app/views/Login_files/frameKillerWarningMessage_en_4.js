@@ -1,0 +1,1 @@
+"use strict";(function(){if(top!=self){document.write('<p class="errorMessage">');document.write("The application  uses ECAS in a frame.");document.write("<br/>");document.write("This behaviour will be blocked in the near future.");document.write("</p>");alert("The application  uses ECAS in a frame.\n\nThis behaviour will be blocked in the near future.")}})();
