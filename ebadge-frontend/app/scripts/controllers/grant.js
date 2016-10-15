@@ -8,17 +8,28 @@
  * Controller of the ebadgeFrontendApp
  */
 angular.module('ebadgeFrontendApp')
-  .controller('GrantCtrl', [ function () {
-    this.requests = [
-      { id: 1, name: '1111' },
-      { id: 2, name: '2222' },
-      { id: 3, name: '3333' },
-      { id: 4, name: '4444' },
-      { id: 5, name: '5555' },
-      { id: 6, name: '6666' }
-    ];
+  .controller('GrantCtrl', [ 'backEnd', function (backEnd) {
+    backEnd.call('GET', 'visitors').then((response) => {
+      this.requests = response._embedded.visitors.filter((visitor) => {
+        return visitor.status !== 'pending';
+      });
 
-    this.requestSelected = function (request) {
-      console.log('request:', request);
+      console.log(this.requests);
+    });
+
+    this.accept = function (request) {
+      console.log('accept:', request);
+
+      //backEnd.call('POST', 'accept').then((response) => {
+      //  console.log(response);
+      //});
+    };
+
+    this.reject = function (request) {
+      console.log('reject:', request);
+
+      //backEnd.call('POST', 'reject').then((response) => {
+      //  console.log(response);
+      //});
     };
   }]);
