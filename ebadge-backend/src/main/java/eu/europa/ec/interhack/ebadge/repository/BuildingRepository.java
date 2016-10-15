@@ -9,6 +9,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * Created by rromero on 10/10/16.
  */
 @RepositoryRestResource(path = "buildings")
-public interface BuildingRepository extends MongoRepository<Building, Long> {
+public interface BuildingRepository extends MongoRepository<Building, String> {
 
 }
