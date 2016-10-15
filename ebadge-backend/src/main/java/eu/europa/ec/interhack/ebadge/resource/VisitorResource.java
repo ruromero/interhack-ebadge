@@ -72,11 +72,11 @@ public class VisitorResource {
 
 	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse accept(@RequestBody VisitorIdResponse visitorId) {
-		System.out.println("handling accept request for " +visitorId.getVisitorId());
+		System.out.println("handling accept request for " + visitorId.getVisitorId());
 		List<Visitor> visitors = repo.findByVisitorId(visitorId.getVisitorId());
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId.getVisitorId() + " not found");
+			return new VisitorResponse("NOK").setComment("Visitor " + visitorId.getVisitorId() + " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
@@ -93,7 +93,7 @@ public class VisitorResource {
 
 		File out;
 		try {
-			out = Encoder.encode(QRCODE_FOLDER, name, "http://52.168.135.250:9000/#/profiles/"+visitor.getVisitorId(), options);
+			out = Encoder.encode(QRCODE_FOLDER, name, "http://52.168.135.250:9000/#/profiles/" + visitor.getVisitorId(), options);
 		} catch (EncodingException e) {
 			e.printStackTrace();
 			return new VisitorResponse("NOK").setComment("QR code generation failed");
@@ -109,19 +109,24 @@ public class VisitorResource {
 		}
 
 		// send email shipping the QR code and PDF
-		new MailSender().sendEmail(visitor.getEmail(), "Your eBadge is ready", out.getAbsolutePath(),
-				pdfFile.getAbsolutePath());
+		String mailBody = String.format(
+				"Dear %s,\\n\\n" + "Please hereby be kindly informed that your access for the visit has been approved.\\n"
+						+ "Find in attachment the QR code with the information of your request for your convenience (needed for the electronic access to the building - using your mobile).\\n"
+						+ "Please find also attached a PDF containing the QR should you need to print it out.\\n\\n" + "Kind regards,\\n" + "The Interhack Team",
+				String.format("%s %s", visitor.getFirstName(), visitor.getLastName()));
+
+		new MailSender().sendEmail(visitor.getEmail(), "Your eBadge is ready", mailBody, out.getAbsolutePath(), pdfFile.getAbsolutePath());
 
 		return new VisitorResponse("OK");
 	}
 
 	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse reject(@RequestBody VisitorIdResponse visitorId) {
-		System.out.println("handling reject request for " +visitorId.getVisitorId());
+		System.out.println("handling reject request for " + visitorId.getVisitorId());
 		List<Visitor> visitors = repo.findByVisitorId(visitorId.getVisitorId());
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId.getVisitorId()+ " not found");
+			return new VisitorResponse("NOK").setComment("Visitor " + visitorId.getVisitorId() + " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
@@ -130,8 +135,7 @@ public class VisitorResource {
 
 		// Send mail and notify the visitor of rejection
 		String mailSubject = "Your request to visit the European insititutions has been rejected";
-		String mailBody = String.format(
-				"Dear %s,\\n\\nYour request to visit %s has been rejected.\\n\\nKind regards,\\nThe eBadge wizards",
+		String mailBody = String.format("Dear %s,\\n\\nYour request to visit %s has been rejected.\\n\\nKind regards,\\nThe eBadge wizards",
 				String.format("%s %s", visitor.getFirstName(), visitor.getLastName()), visitor.getHost());
 		new MailSender().sendEmail(visitor.getEmail(), mailSubject, mailBody);
 
