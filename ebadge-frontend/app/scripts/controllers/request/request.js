@@ -14,7 +14,7 @@ angular.module('ebadgeFrontendApp')
     this.model = {
       firstName: 'Enzo',
       lastName: 'Voort',
-      email: 'enzo.voort@gmail.com',
+      email: 'antdim@gmail.com',
       mobile: '+32 475 123 456',
       idDocNumber: '123-34-567',
       validityIdDate: new Date(),
