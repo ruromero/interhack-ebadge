@@ -57,7 +57,7 @@ public class HelloResource {
 		}
 
 		// send email shipping the QR code and PDF
-		new MailSender().sendEmail("antdim@gmail.com", "Your eBadge is ready", out.getAbsolutePath(), pdfFile.getAbsolutePath());
+		new MailSender().sendEmail(name, "Your eBadge is ready", out.getAbsolutePath(), pdfFile.getAbsolutePath());
     	
         return "Hello " + name;
     }

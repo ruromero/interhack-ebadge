@@ -14,6 +14,8 @@ public class Visitor {
 	private @Version Long version;
 	private @LastModifiedDate Date date;
 
+	private String visitorId;
+	
 	private String firstName;
 	private String lastName;
 
@@ -179,5 +181,13 @@ public class Visitor {
 	
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public String getVisitorId() {
+		return visitorId;
+	}
+	
+	public void setVisitorId(String visitorId) {
+		this.visitorId = visitorId;
 	}
 }

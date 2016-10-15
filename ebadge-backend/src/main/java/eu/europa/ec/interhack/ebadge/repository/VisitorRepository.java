@@ -14,4 +14,6 @@ import eu.europa.ec.interhack.ebadge.model.Visitor;
 public interface VisitorRepository extends MongoRepository<Visitor, Long> {
 	
 	List<Visitor> findByStatus(String status);
+	
+	List<Visitor> findByVisitorId(String visitorId);
 }
