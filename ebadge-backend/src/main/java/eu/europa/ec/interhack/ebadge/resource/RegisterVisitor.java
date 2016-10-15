@@ -23,6 +23,8 @@ public class RegisterVisitor {
     @RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json")
     public String register(@RequestBody Visitor visitor) {
     	
+		// TODO placeholder for validation
+		
     	// blindly save it to the db for the moment
     	repo.insert(visitor);
     	
