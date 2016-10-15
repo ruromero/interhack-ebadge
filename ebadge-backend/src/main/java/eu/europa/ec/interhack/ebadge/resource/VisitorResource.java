@@ -59,13 +59,18 @@ public class VisitorResource {
 		options.setForegroundColor(Color.BLACK);
 		String name = "" + new Random().nextInt(99);
 
+		File out;
 		try {
-			File out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
+			out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
 		} catch (EncodingException e) {
 			e.printStackTrace();
+			return new VisitorResponse("NOK").setComment("QR code generation failed");
 		}
+		
+		// TODO generate the pdf file
 
 		// TODO send email shipping the QR code
+		new MailSender().sendEmail(visitor.getEmail(), out.getAbsolutePath(), "");
 
 		return new VisitorResponse("OK");
 	}
