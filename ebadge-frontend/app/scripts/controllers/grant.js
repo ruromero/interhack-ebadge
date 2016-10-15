@@ -16,8 +16,6 @@ angular.module('ebadgeFrontendApp')
     });
 
     this.accept = function (request) {
-      console.log('accept:', request);
-
       backEnd.call('POST', 'visitor/accept', { visitorId: request.visitorId }).then((response) => {
         console.log(response)
         backEnd.call('GET', 'visitors').then((response) => {
@@ -29,8 +27,6 @@ angular.module('ebadgeFrontendApp')
     };
 
     this.reject = function (request) {
-      console.log('reject:', request);
-
       backEnd.call('POST', 'visitor/reject', { visitorId: request.visitorId }).then((response) => {
         backEnd.call('GET', 'visitors').then((response) => {
           this.requests = response._embedded.visitors.filter((visitor) => {

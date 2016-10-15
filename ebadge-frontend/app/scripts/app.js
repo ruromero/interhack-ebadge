@@ -40,7 +40,7 @@ angular
         controller: 'GrantCtrl',
         controllerAs: 'ctrl'
       })
-      .when('/status', {
+      .when('/status/:status', {
         templateUrl: 'views/status.html',
         controller: 'StatusCtrl',
         controllerAs: 'ctrl'

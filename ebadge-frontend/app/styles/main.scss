@@ -152,6 +152,18 @@ body {
 }
 
 /*
+** Status
+*/
+.status {
+  font-size: 20px;
+  color: #444;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
 ** Grant
 */
 .grant {
