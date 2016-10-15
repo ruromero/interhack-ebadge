@@ -9,7 +9,6 @@ angular.module('ebadgeFrontendApp')
 
     $http({ method: method, url: backEndUrl+url, data: data })
       .success(function (result) {
-        console.log(result);
         deferred.resolve(result);
       })
       .error(function (error) {

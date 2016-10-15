@@ -78,6 +78,10 @@ public class MailSender {
 	}
 	
 	public void sendEmail(String toEmail, String subject) {
+		sendEmail(toEmail, subject, "Dear Mail Crawler," + "\n\n No spam to my email, please!");
+	}
+	
+	public void sendEmail(String toEmail, String subject, String body) {
 		System.out.println("preparing email...");
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
@@ -91,7 +95,7 @@ public class MailSender {
 			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
 			message.setSubject(SUBJECT_PREFIX + subject);
-			message.setText("Dear Mail Crawler," + "\n\n No spam to my email, please!");
+			message.setText(body);
 
 			System.out.println("sending email...");
 			Transport.send(message);
