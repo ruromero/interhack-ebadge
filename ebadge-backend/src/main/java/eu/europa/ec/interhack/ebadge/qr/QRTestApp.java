@@ -17,7 +17,7 @@ import eu.europa.ec.interhack.ebadge.qr.pdf.PDFGenerator;
 
 public class QRTestApp {
 
-	public static void main(String[] args) throws EncodingException, DecodingException {
+	public static void test(String[] args) throws EncodingException, DecodingException {
 		String name = "" + new Random().nextInt(99);
 
 		EncodingOptions options = new EncodingOptions();
