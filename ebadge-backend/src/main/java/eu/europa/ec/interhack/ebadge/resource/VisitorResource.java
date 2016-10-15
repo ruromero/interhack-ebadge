@@ -106,7 +106,7 @@ public class VisitorResource {
 		// Send mail and notify the visitor of rejection
 		String mailSubject = "Your request to visit the European insititutions has been rejected";
 		String mailBody = String.format("Dear %s,\\n\\nYour request to visit %s has been rejected.\\n\\nKind regards,\\nThe eBadge wizards",  String.format("%s %s", visitor.getFirstName(), visitor.getLastName()), visitor.getHost());
-		new MailSender().sendEmail(visitor.getEmail(), "Your request has been rejected");
+		new MailSender().sendEmail(visitor.getEmail(), mailSubject, mailBody);
 		
 		return new VisitorResponse("OK");
 	}
