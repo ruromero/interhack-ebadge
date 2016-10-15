@@ -39,12 +39,12 @@ body {
   .navbar {
     background-color: #004494;
 
-    a {
+    li a {
       color: white !important;
     }
 
     li.active a {
-      color: #004494;
+      color: #004494 !important;
     }
   }
 }
