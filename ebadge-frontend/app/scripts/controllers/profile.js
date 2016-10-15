@@ -8,13 +8,13 @@
  * Controller of the ebadgeFrontendApp
  */
 angular.module('ebadgeFrontendApp')
-  .controller('ProfileCtrl', [ 'backEnd', function ($http, backEndUrl) {
+  .controller('ProfileCtrl', [ '$http', 'backEndUrl', function ($http, backEndUrl) {
     
-    var Profile = $http(backEndUrl + 'visitors/search/findByVisitorId?visitorId=' + visitorId);
+    var ctrl = this;
     this.model = {};
 
-    $http.get(backEndUrl + 'visitors/search/findByVisitorId?visitorId=' + visitorId).then(function(data) {
-      this.model = data._embedded;
+    $http.get(backEndUrl + 'visitors/search/findByVisitorId?visitorId=ba2a08d9-c35a-4c80-bead-56d755be1b0f').then(function(data) {
+      ctrl.model = data.data._embedded.visitors[0];
     });
 
   }]);
