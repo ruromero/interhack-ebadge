@@ -1,5 +1,6 @@
 package eu.europa.ec.interhack.ebadge.qr.pdf;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -19,7 +20,7 @@ import eu.europa.ec.interhack.ebadge.model.Visitor;
 
 public class PDFGenerator {
 
-	public static void generate(String outputDirectory, String fileName, Visitor userData, String qrImagePath, Institution institution) throws PDFGeneratingException {
+	public static File generate(String outputDirectory, String fileName, Visitor userData, String qrImagePath, Institution institution) throws PDFGeneratingException {
 		Document document = new Document(PageSize.A4);
 		try {
 			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(outputDirectory + fileName + ".pdf"));
@@ -56,6 +57,8 @@ public class PDFGenerator {
 
 			document.close();
 			writer.close();
+			
+			return new File(outputDirectory + fileName + ".pdf");
 		} catch (DocumentException | IOException e) {
 			throw new PDFGeneratingException("Error generating PDF: " + e.getMessage(), e);
 		}
