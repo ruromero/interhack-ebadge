@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import eu.europa.ec.interhack.ebadge.dto.VisitorResponse;
@@ -70,20 +69,20 @@ public class VisitorResource {
 		}
 	}
 
-	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	@RequestMapping(value = "/accept", method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
 	public VisitorResponse accept(@RequestBody String visitorId) {
-
+		System.out.println("handling accept request for " +visitorId);
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor not found");
+			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId+ " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
 		visitor.setStatus("ACCEPTED");
 		repo.save(visitor);
 
-		// crate the qr-code UPON VALIDATION
+		// create the qr-code UPON VALIDATION
 		EncodingOptions options = new EncodingOptions();
 		options.setSize(340);
 		options.setImageType(ImageType.PNG);
@@ -93,7 +92,7 @@ public class VisitorResource {
 
 		File out;
 		try {
-			out = Encoder.encode(QRCODE_FOLDER, name, visitor.getId(), options);
+			out = Encoder.encode(QRCODE_FOLDER, name, "http://52.168.135.250:9000/#/profiles/"+visitor.getVisitorId(), options);
 		} catch (EncodingException e) {
 			e.printStackTrace();
 			return new VisitorResponse("NOK").setComment("QR code generation failed");
@@ -115,12 +114,13 @@ public class VisitorResource {
 		return new VisitorResponse("OK");
 	}
 
-	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "text/plain", produces = "application/json")
 	public VisitorResponse reject(@RequestBody String visitorId) {
+		System.out.println("handling reject request for " +visitorId);
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor not found");
+			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId+ " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
