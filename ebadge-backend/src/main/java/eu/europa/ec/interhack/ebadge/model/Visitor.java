@@ -27,7 +27,9 @@ public class Visitor {
 	private String visitDate;
 	private String nationality;
 	private String expirationDate;
-
+	
+	private String status; // REJECTED, APPROVED
+	
 	public String getExpirationDate() {
 		return expirationDate;
 	}
@@ -161,4 +163,11 @@ public class Visitor {
 		this.date = date;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+	
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }

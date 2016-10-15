@@ -1,22 +1,12 @@
 package eu.europa.ec.interhack.ebadge.qr.decode;
 
-public class DecodingException extends Exception {
+import eu.europa.ec.interhack.ebadge.qr.QRException;
+
+public class DecodingException extends QRException {
+
+	public DecodingException(String message, Exception e) {
+		super(message, e);
+	}
 
 	private static final long serialVersionUID = -8377023312475734443L;
-
-	public DecodingException() {
-	}
-
-	public DecodingException(String message) {
-		super(message);
-	}
-
-	public DecodingException(String message, Exception cause) {
-		super(message, cause);
-	}
-
-	public DecodingException(Throwable cause) {
-		super(cause);
-	}
-
 }
