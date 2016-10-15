@@ -11,7 +11,7 @@ public class IndexController implements ErrorController {
 
 	@RequestMapping(value = PATH)
 	public String error() {
-		return "Something when wrong, but don't worry, be happy :)";
+		return "[InterHack +++++ eBadge App] Ops.. Something went wrong, but don't worry, we'll fix it :)";
 	}
 
 	@Override
