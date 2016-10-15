@@ -3,6 +3,9 @@ package eu.europa.ec.interhack.ebadge.qr.pdf;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.commons.io.IOUtils;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -38,7 +41,9 @@ public class PDFGenerator {
 			cb.lineTo(595, 765);
 			cb.stroke();
 
-			Image logo = Image.getInstance("src/main/resources/logos/" + institution.getLogo() + ".png");
+			InputStream is = PDFGenerator.class.getResourceAsStream("/logos/" + institution.getLogo() + ".png");
+			byte[] bytes = IOUtils.toByteArray(is);
+			Image logo = Image.getInstance(bytes);
 			logo.setAbsolutePosition(10, 770);
 			logo.scaleToFit(70, 70);
 			document.add(logo);
