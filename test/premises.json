@@ -1,0 +1,1058 @@
+[
+   {
+      "code":"AN88",
+      "name":"Arlon 88 (SCAN)",
+      "address":"rue d' Arlon, 88",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "PMO"
+      ],
+      "telephones":[
+         "56278"
+      ]
+   },
+   {
+      "code":"B-28",
+      "name":"Belliard 28",
+      "address":"rue Belliard, 28",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "DIGIT"
+      ],
+      "telephones":[
+         "96097"
+      ]
+   },
+   {
+      "code":"B100",
+      "name":"Belliard 100",
+      "address":"rue Belliard, 100",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "SCIC"
+      ],
+      "telephones":[
+         "56511",
+         "56566"
+      ]
+   },
+   {
+      "code":"B232",
+      "name":"Belliard 232 (White Park)",
+      "address":"rue Breydel, 4",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "SANTE"
+      ],
+      "telephones":[
+         "57403",
+         "57404"
+      ]
+   },
+   {
+      "code":"BERL",
+      "name":"Berlaymont",
+      "address":"rue de la Loi, 200",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "SJ",
+         "CA",
+         "DIGIT",
+         "EPSC",
+         "SCIC",
+         "COMM",
+         "OIB",
+         "SG",
+         "HR"
+      ],
+      "telephones":[
+         "52426",
+         "68691",
+         "68692"
+      ]
+   },
+   {
+      "code":"BOU2",
+      "name":"BOURG 115 - EACEA",
+      "address":"Rue Colonel Bourg, 115",
+      "postalCode":"1140",
+      "city":"Evere",
+      "occupiers":[
+         "EACEA"
+      ],
+      "telephones":[
+         "77126",
+         "71261"
+      ]
+   },
+   {
+      "code":"BOUR",
+      "name":"Colonel Bourg- EACEA",
+      "address":"Rue Colonel Bourg , 135/139",
+      "postalCode":"1140",
+      "city":"Evere",
+      "occupiers":[
+         "EACEA"
+      ],
+      "telephones":[
+         "93565",
+         "91656"
+      ]
+   },
+   {
+      "code":"BRE2",
+      "name":"Breydel 2",
+      "address":"avenue d'Auderghem, 19",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "HR",
+         "BUDG"
+      ],
+      "telephones":[
+         "90493",
+         "90936"
+      ]
+   },
+   {
+      "code":"BREY",
+      "name":"Breydel",
+      "address":"avenue d'Auderghem, 45",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "GROW",
+         "BUDG"
+      ],
+      "telephones":[
+         "53097",
+         "62972",
+         "64889"
+      ]
+   },
+   {
+      "code":"BU-1",
+      "name":"Beaulieu 1 (Espace Beaulieu)",
+      "address":"avenue de Beaulieu, 1",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "REGIO"
+      ],
+      "telephones":[
+         "93652",
+         "66636"
+      ]
+   },
+   {
+      "code":"BU-5",
+      "name":"Beaulieu 5 (Espace Beaulieu)",
+      "address":"avenue de Beaulieu, 5",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "ENV",
+         "REGIO"
+      ],
+      "telephones":[
+         "59507",
+         "93650",
+         "93552"
+      ]
+   },
+   {
+      "code":"BU-9",
+      "name":"Beaulieu 9 (Espace Beaulieu)",
+      "address":"avenue de Beaulieu, 9",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "Day nursery",
+         "after-school childminding centre"
+      ],
+      "telephones":[
+         "61387 (BU11)",
+         "61378 (BU11)"
+      ]
+   },
+   {
+      "code":"BU24",
+      "name":"Beaulieu 24 (Croissant)",
+      "address":"avenue de Beaulieu, 24",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "CLIMA"
+      ],
+      "telephones":[
+         "74590"
+      ]
+   },
+   {
+      "code":"BU25",
+      "name":"Beaulieu 25",
+      "address":"avenue de Beaulieu , 25",
+      "postalCode":"1160",
+      "city":"auderghem",
+      "occupiers":[
+         "CNECT",
+         "DIGIT"
+      ],
+      "telephones":[
+         "53818"
+      ]
+   },
+   {
+      "code":"BU29",
+      "name":"Beaulieu 29",
+      "address":"avenue de Beaulieu, 29",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "SRSS",
+         "REGIO"
+      ],
+      "telephones":[
+         "68375",
+         "68666"
+      ]
+   },
+   {
+      "code":"BU31",
+      "name":"Beaulieu 31",
+      "address":"avenue de Beaulieu, 31",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "CNECT"
+      ],
+      "telephones":[
+         "68665",
+         "68453"
+      ]
+   },
+   {
+      "code":"BU33",
+      "name":"Beaulieu 33",
+      "address":"avenue de Beaulieu, 33",
+      "postalCode":"1160",
+      "city":"Auderghem",
+      "occupiers":[
+         "CNECT"
+      ],
+      "telephones":[
+         "68200",
+         "54966"
+      ]
+   },
+   {
+      "code":"C-25",
+      "name":"CAPITAL IMMEUBLE PARIS",
+      "address":"Avenue de Cortenbergh, 25",
+      "postalCode":"1049",
+      "city":"Bruxelles",
+      "occupiers":[
+         "DIGIT",
+         "EPSO"
+      ],
+      "telephones":[
+         "74188",
+         "74107"
+      ]
+   },
+   {
+      "code":"C115",
+      "name":"Ecole Royale Militaire",
+      "address":"avenue de Cortenberg, 115",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+
+      ],
+      "telephones":[
+         "02/584 31 00"
+      ]
+   },
+   {
+      "code":"C150",
+      "name":"Kortenberg 150",
+      "address":"avenue de Cortenbergh, 150",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+
+      ],
+      "telephones":[
+         "02/584 50 17",
+         "02/584 50 02"
+      ]
+   },
+   {
+      "code":"C158",
+      "name":"Kortenberg 158",
+      "address":"avenue de Cortenbergh, 158",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+
+      ],
+      "telephones":[
+         "02/584 50 17",
+         "02/584 50 02"
+      ]
+   },
+   {
+      "code":"CCAB",
+      "name":"Centre De Conférences Albert Borschette",
+      "address":"rue Froissart, 36",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Conference centre"
+      ],
+      "telephones":[
+         "58700",
+         "52659",
+         "59690"
+      ]
+   },
+   {
+      "code":"CDMA",
+      "name":"Mondrian",
+      "address":"rue du Champ de Mars, 21",
+      "postalCode":"1050",
+      "city":"Bruxelles",
+      "occupiers":[
+         "RTD",
+         "JRC"
+      ],
+      "telephones":[
+         "87187",
+         "21090"
+      ]
+   },
+   {
+      "code":"CHAR",
+      "name":"Charlemagne",
+      "address":"rue de la Loi, 170",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "SRSS",
+         "ECFIN",
+         "SCIC",
+         "COMM",
+         "TRADE",
+         "IAS"
+      ],
+      "telephones":[
+         "90600",
+         "91736"
+      ]
+   },
+   {
+      "code":"CLOV",
+      "name":"Crèche Clovis",
+      "address":"boulevard Clovis, 75",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "OIB"
+      ],
+      "telephones":[
+         "91407",
+         "51648"
+      ]
+   },
+   {
+      "code":"COLE",
+      "name":"Cornet-Leman",
+      "address":"Rue G. Leman, 60",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "OIB"
+      ],
+      "telephones":[
+         "75739",
+         "75542",
+         "75742",
+         "75733"
+      ]
+   },
+   {
+      "code":"COV2",
+      "name":"Covent Garden 2",
+      "address":"Place Rogier, 16",
+      "postalCode":"1210",
+      "city":"Saint-Josse",
+      "occupiers":[
+         "Executive Agency for Small and Medium-sized Enterprises (EASME)",
+         "RCEA",
+         "REA"
+      ],
+      "telephones":[
+         "74449",
+         "74446",
+         "95595",
+         "71764"
+      ]
+   },
+   {
+      "code":"COVE",
+      "name":"Covent Garden",
+      "address":"Place Rogier, 16",
+      "postalCode":"1210",
+      "city":"Saint-Josse-Ten-Noode",
+      "occupiers":[
+         "FP7"
+      ],
+      "telephones":[
+         "95595",
+         "93429",
+         "95595",
+         "71764"
+      ]
+   },
+   {
+      "code":"CSM1",
+      "name":"Cours Saint Michel 1",
+      "address":"Cours Saint-Michel, 23",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "OIB"
+      ],
+      "telephones":[
+         "63385",
+         "90957",
+         "51933 (annexe)"
+      ]
+   },
+   {
+      "code":"DAV1",
+      "name":"Bâtiment logistique",
+      "address":"Avenue du Bourget, 1-3",
+      "postalCode":"1140",
+      "city":"Evere",
+      "occupiers":[
+         "(Concept and reproduction",
+         "mail shuttle)"
+      ],
+      "telephones":[
+         "92681"
+      ]
+   },
+   {
+      "code":"DM24",
+      "name":"Demot 24",
+      "address":"rue de Mot, 24",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "European Administrative School (EAS)"
+      ],
+      "telephones":[
+         "51185",
+         "51186",
+         "62927"
+      ]
+   },
+   {
+      "code":"DM28",
+      "name":"Demot 28",
+      "address":"rue de Mot, 28",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "MOVE"
+      ],
+      "telephones":[
+         "68682",
+         "68651"
+      ]
+   },
+   {
+      "code":"EEAS",
+      "name":"The Capital",
+      "address":"Rond Point Schuman, 9A",
+      "postalCode":"1046",
+      "city":"Bruxelles",
+      "occupiers":[
+
+      ],
+      "telephones":[
+         "02/584 ou *96 + EXT 2016 et 2084 (hôtesses)",
+         "1889 et 1400 (gardes)"
+      ]
+   },
+   {
+      "code":"F101",
+      "name":"B232 Extension (Brey-Froi)",
+      "address":"rue Froissart, 101",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "SANTE"
+      ],
+      "telephones":[
+         "52101"
+      ]
+   },
+   {
+      "code":"G--1",
+      "name":"Genève 1 - Astrid",
+      "address":"Rue de geneve, 1",
+      "postalCode":"1140",
+      "city":"Evere",
+      "occupiers":[
+         "day nursery",
+         "after-school childminding centre"
+      ],
+      "telephones":[
+         "57654"
+      ]
+   },
+   {
+      "code":"G--6",
+      "name":"Genève 6",
+      "address":"rue de Genève, 6-8",
+      "postalCode":"1140",
+      "city":"Bruxelles",
+      "occupiers":[
+         "DGT"
+      ],
+      "telephones":[
+         "59699",
+         "59688"
+      ]
+   },
+   {
+      "code":"G-12",
+      "name":"Genève 12 - Evere Green",
+      "address":"rue de Genève, 12",
+      "postalCode":"1140",
+      "city":"Evere",
+      "occupiers":[
+         "DGT"
+      ],
+      "telephones":[
+         "92941"
+      ]
+   },
+   {
+      "code":"HTWG",
+      "name":"Houtweg",
+      "address":"Houtweg, 23",
+      "postalCode":"1140",
+      "city":"Evere",
+      "occupiers":[
+
+      ],
+      "telephones":[
+         "58452"
+      ]
+   },
+   {
+      "code":"J-27",
+      "name":"Joseph II 27",
+      "address":"rue Joseph II, 27",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "EMPL"
+      ],
+      "telephones":[
+         "94434",
+         "94161"
+      ]
+   },
+   {
+      "code":"J-30",
+      "name":"Brittania",
+      "address":"rue Joseph II, 30",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "European Schools"
+      ],
+      "telephones":[
+         "95944 (COMMUN)",
+         "91740 (OLAF)",
+         "91693 (OLAF)",
+         "68018"
+      ]
+   },
+   {
+      "code":"J-54",
+      "name":"Joseph II 54",
+      "address":"Rue Joseph II, 54",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Advisers (SG)"
+      ],
+      "telephones":[
+         "98868",
+         "98869"
+      ]
+   },
+   {
+      "code":"J-59",
+      "name":"City Garden",
+      "address":"rue Joseph II, 59",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "DEVCO"
+      ],
+      "telephones":[
+         "74091"
+      ]
+   },
+   {
+      "code":"J-70",
+      "name":"Emerald Court",
+      "address":"rue Joseph II, 70",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "EAC",
+         "CDP-OSP",
+         "NEAR"
+      ],
+      "telephones":[
+         "98824",
+         "59414"
+      ]
+   },
+   {
+      "code":"J-79",
+      "name":"Eudip-Three",
+      "address":"Rue Joseph II, 79",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "MARE",
+         "TAXUD"
+      ],
+      "telephones":[
+         "57434 (J-79)",
+         "57480 (J-79)",
+         "87923 (Loi80)",
+         "87924 (Loi80)"
+      ]
+   },
+   {
+      "code":"J-99",
+      "name":"Joseph II 99",
+      "address":"rue Joseph II, 99",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "MARE"
+      ],
+      "telephones":[
+         "64957",
+         "67054",
+         "65409"
+      ]
+   },
+   {
+      "code":"KORT",
+      "name":"Guldendelle",
+      "address":"Indutriepark Guldendelle Vinkstraat, 2",
+      "postalCode":"3070",
+      "city":"Kortenberg",
+      "occupiers":[
+         "Historical archives"
+      ],
+      "telephones":[
+         "99679",
+         "59795"
+      ]
+   },
+   {
+      "code":"L-15",
+      "name":"Loi 15",
+      "address":"rue de la Loi, 15",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "RTD",
+         "NEAR"
+      ],
+      "telephones":[
+         "77342",
+         "77339"
+      ]
+   },
+   {
+      "code":"L-41",
+      "name":"Eurosquare",
+      "address":"rue de la Loi, 41",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "DEVCO"
+      ],
+      "telephones":[
+         "93520",
+         "65802"
+      ]
+   },
+   {
+      "code":"L-56",
+      "name":"Loi 56",
+      "address":"Rue de la Loi , 56",
+      "postalCode":"1049",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Galileo"
+      ],
+      "telephones":[
+         "58099"
+      ]
+   },
+   {
+      "code":"L-86",
+      "name":"Loi 86",
+      "address":"rue de la Loi, 86",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "ECHO"
+      ],
+      "telephones":[
+         "56463",
+         "58244"
+      ]
+   },
+   {
+      "code":"L102",
+      "name":"Loi 102",
+      "address":"rue de la Loi, 102",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "AGRI"
+      ],
+      "telephones":[
+         "61776",
+         "90279"
+      ]
+   },
+   {
+      "code":"L130",
+      "name":"Loi 130",
+      "address":"rue de la Loi, 130",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "AGRI",
+         "DEVCO"
+      ],
+      "telephones":[
+         "50290/62754",
+         "(Bloc C)",
+         "55150/61991",
+         "(Bloc E)"
+      ]
+   },
+   {
+      "code":"LX40",
+      "name":"Luxembourg 40",
+      "address":"rue de Luxembourg, 40",
+      "postalCode":"1050",
+      "city":"Bruxelles",
+      "occupiers":[
+         "TAXUD",
+         "JUST"
+      ],
+      "telephones":[
+         "50921",
+         "55547"
+      ]
+   },
+   {
+      "code":"LX46",
+      "name":"Luxembourg 46",
+      "address":"rue de Luxembourg, 46",
+      "postalCode":"1050",
+      "city":"Bruxelles",
+      "occupiers":[
+         "HOME",
+         "JUST"
+      ],
+      "telephones":[
+         "55529",
+         "52022",
+         "51626",
+         "91886"
+      ]
+   },
+   {
+      "code":"MADO",
+      "name":"Tour Madou",
+      "address":"Place Madou, 1",
+      "postalCode":"1210",
+      "city":"Saint-Josse-Ten-Noode",
+      "occupiers":[
+         "Informatics forum"
+      ],
+      "telephones":[
+         "56004",
+         "56068"
+      ]
+   },
+   {
+      "code":"MO34",
+      "name":"Montoyer 34",
+      "address":"rue Montoyer, 34",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Personnel files",
+         "Adminfo ('Welcome Office')"
+      ],
+      "telephones":[
+         "53003",
+         "53004"
+      ]
+   },
+   {
+      "code":"MO59",
+      "name":"Montoyer 59",
+      "address":"rue Montoyer, 59",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "JUST"
+      ],
+      "telephones":[
+         "58802",
+         "91213",
+         "91155"
+      ]
+   },
+   {
+      "code":"N105",
+      "name":"Nerviens 105",
+      "address":"avenue des Nerviens, 105",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "GROW"
+      ],
+      "telephones":[
+         "72109"
+      ]
+   },
+   {
+      "code":"ORBN",
+      "name":"Espace Orban",
+      "address":"square Frère Orban, 8",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "RTD"
+      ],
+      "telephones":[
+         "85510"
+      ]
+   },
+   {
+      "code":"OVER",
+      "name":"Overijse",
+      "address":"Dennenboslaan, 54",
+      "postalCode":"3090",
+      "city":"Overijse",
+      "occupiers":[
+         "European Interinstitutional Centre"
+      ],
+      "telephones":[
+         "-"
+      ]
+   },
+   {
+      "code":"PALM",
+      "name":"Crèche Palmerston",
+      "address":"avenue Palmerston, 6/14",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+
+      ],
+      "telephones":[
+         "65103",
+         "65134",
+         "64882",
+         "91819"
+      ]
+   },
+   {
+      "code":"PLB3",
+      "name":"Livingstone",
+      "address":"Philippe Le Bon, 3",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "EMPL",
+         "HR"
+      ],
+      "telephones":[
+         "73569"
+      ]
+   },
+   {
+      "code":"SC11",
+      "name":"Millenium",
+      "address":"rue de la Science, 11",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "HR"
+      ],
+      "telephones":[
+         "96412",
+         "96413",
+         "99242"
+      ]
+   },
+   {
+      "code":"SC27",
+      "name":"Science 27 (SCAN)",
+      "address":"rue de la Science, 27",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "PMO"
+      ],
+      "telephones":[
+         "85510",
+         "57408"
+      ]
+   },
+   {
+      "code":"SC29",
+      "name":"Science 29 (SCAN)",
+      "address":"rue de la Science, 29",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Social clubs",
+         "training",
+         "restaurant à la carte"
+      ],
+      "telephones":[
+         "63655"
+      ]
+   },
+   {
+      "code":"SPA2",
+      "name":"The Pavilion",
+      "address":"rue de Spa , 2",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "FISMA"
+      ],
+      "telephones":[
+         "97689",
+         "68759"
+      ]
+   },
+   {
+      "code":"SPA3",
+      "name":"Parc Avenue",
+      "address":"rue de Spa , 3",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "TAXUD",
+         "EMPL"
+      ],
+      "telephones":[
+         "96506",
+         "96474"
+      ]
+   },
+   {
+      "code":"T-22",
+      "name":"Treurenberg",
+      "address":"rue Treurenberg, 22",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+
+      ],
+      "telephones":[
+
+      ]
+   },
+   {
+      "code":"VM-2",
+      "name":"Van Maerlant 2",
+      "address":"rue Van Maerlant, 2",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Arts and sports clubs",
+         "The Foyer",
+         "Brasserie"
+      ],
+      "telephones":[
+         "63979",
+         "94320"
+      ]
+   },
+   {
+      "code":"VM18",
+      "name":"Ex-Couvent VM",
+      "address":"rue Van Maerlant, 18",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Central Library",
+         "Library for leisure reading",
+         "after-school childminding centre",
+         "OP"
+      ],
+      "telephones":[
+         "65222",
+         "58140"
+      ]
+   },
+   {
+      "code":"W910",
+      "name":"ROLIN",
+      "address":"Chaussée de Wavre, 910",
+      "postalCode":"1040",
+      "city":"Bruxelles",
+      "occupiers":[
+         "Agence exécutive pour l'innovation et les réseaux (INEA)"
+      ],
+      "telephones":[
+         "72289"
+      ]
+   },
+   {
+      "code":"WALI",
+      "name":"WAGON-LITS",
+      "address":"Boulevard Clovis, 53",
+      "postalCode":"1000",
+      "city":"Bruxelles",
+      "occupiers":[
+         "OIB"
+      ],
+      "telephones":[
+         "91407 (CLOV)",
+         "51648 (CLOV)"
+      ]
+   }
+]

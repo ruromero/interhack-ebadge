@@ -1,0 +1,79 @@
+<form name="form" class="request" ng-submit="ctrl.submit()">
+  <div class="form-group">
+    <label for="firstname"><span class="mandatory">*</span> First name</label>
+    <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" ng-required="required">
+  </div>
+
+  <div class="form-group">
+    <label for="lastname"><span class="mandatory">*</span> Last name</label>
+    <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" ng-required="required">
+  </div>
+
+  <div class="form-group">
+    <label for="email"><span class="mandatory">*</span> Last name</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter your email" ng-required="required">
+  </div>
+
+  <div class="form-group">
+    <label for="mobile">Mobile phone number</label>
+    <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile phone number">
+  </div>
+
+  <div class="form-group">
+    <label for="idDocNumber"><span class="mandatory">*</span> Official document ID</label>
+    <input type="text" class="form-control" id="idDocNumber" placeholder="Enter your ID" ng-required="required">
+  </div>
+
+  <div class="form-group">
+    <label for="validityIdDate"><span class="mandatory">*</span> ID validity date</label>
+    <input type="date" class="form-control" id="validityIdDate" placeholder="Enter the validity date of your ID" ng-required="required">
+  </div>
+
+  <div class="form-group">
+    <label for="birthdate">Date of birth</label>
+    <input type="date" class="form-control" id="birthdate" placeholder="Enter your birthdate">
+  </div>
+
+  <div class="form-group">
+    <label for="hostname"><span class="mandatory">*</span> Visiting host</label>
+    <input type="text" class="form-control" id="hostname" placeholder="Enter the name of the host you're visiting" ng-required="required">
+  </div>
+
+  <div class="form-group">
+    <label for="building">Building</label>
+    <input type="text" class="form-control" id="building" placeholder="Enter the the building name">
+  </div>
+
+  <div class="form-group">
+    <label for="office">Office</label>
+    <input type="text" class="form-control" id="office" placeholder="Enter the floor and the number of the office">
+  </div>
+
+  <div class="form-group">
+    <label for="visitDate">Visiting date</label>
+    <input type="date" class="form-control" id="visitDate" placeholder="Enter the visiting date">
+  </div>
+
+  <div class="form-group">
+    <label for="nationality">Nationality</label>
+    <input type="text" class="form-control" id="nationality" placeholder="Enter your nationality">
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Parking required
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="plate">Car plate</label>
+    <input type="text" class="form-control" id="plate" placeholder="Enter your car plate">
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <input type="text" class="form-control" id="nationality" placeholder="Any comment?">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

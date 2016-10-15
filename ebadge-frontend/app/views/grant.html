@@ -1,0 +1,14 @@
+<div class="grant">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="request in ctrl.requests">
+            <div class="request-name">{{ request.name }}</div>
+
+            <div class="request-actions">
+                <i class="fa fa-pencil" ng-click="ctrl.requestSelected(request)"></i>
+                <i class="fa fa-trash"></i>
+                <i class="fa fa-check"></i>
+                <i class="fa fa-times"></i>
+            </div>
+        </li>
+    </ul>
+</div>

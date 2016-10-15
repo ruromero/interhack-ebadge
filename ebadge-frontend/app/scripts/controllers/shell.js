@@ -8,10 +8,6 @@
  * Controller of the ebadgeFrontendApp
  */
 angular.module('ebadgeFrontendApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('ShellCtrl', [ '$rootScope', function ($rootScope) {
+    this.rootScope = $rootScope;
+  }]);
