@@ -76,7 +76,7 @@ public class VisitorResource {
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor not found");
+			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId+ " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
@@ -120,7 +120,7 @@ public class VisitorResource {
 		List<Visitor> visitors = repo.findByVisitorId(visitorId);
 
 		if (visitors == null || visitors.isEmpty()) {
-			return new VisitorResponse("NOK").setComment("Visitor not found");
+			return new VisitorResponse("NOK").setComment("Visitor "+ visitorId+ " not found");
 		}
 
 		Visitor visitor = visitors.get(0);
