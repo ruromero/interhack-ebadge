@@ -93,7 +93,7 @@ public class VisitorResource {
 
 		File out;
 		try {
-			out = Encoder.encode(QRCODE_FOLDER, name, "http://52.168.135.250:9000/#/profiles/" + visitor.getVisitorId(), options);
+			out = Encoder.encode(QRCODE_FOLDER, name, "http://52.166.135.250:9000/#/profiles/" + visitor.getVisitorId(), options);
 		} catch (EncodingException e) {
 			e.printStackTrace();
 			return new VisitorResponse("NOK").setComment("QR code generation failed");
