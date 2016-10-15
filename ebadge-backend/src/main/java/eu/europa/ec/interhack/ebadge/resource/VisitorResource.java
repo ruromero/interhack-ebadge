@@ -33,7 +33,7 @@ public class VisitorResource {
 		return new VisitorResponse("OK");
 	}
 
-	@RequestMapping(value = "/check", method = RequestMethod.POST)
+	@RequestMapping(value = "/check", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse checkVisitor(@RequestParam(value = "visitor") Visitor visitor) {
 
 		// TODO here check an already registered visitor
