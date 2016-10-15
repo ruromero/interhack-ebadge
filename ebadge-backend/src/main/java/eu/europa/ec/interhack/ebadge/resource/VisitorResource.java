@@ -28,6 +28,7 @@ import eu.europa.ec.interhack.ebadge.repository.VisitorRepository;
  * Created by rromero on 10/10/16.
  */
 @RestController
+@RequestMapping("/rest/visitor")
 public class VisitorResource {
 
 	private static final String QRCODE_FOLDER = System.getProperty("user.dir");
