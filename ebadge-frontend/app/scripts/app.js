@@ -55,6 +55,11 @@ angular
         controller: 'BadgeCtrl',
         controllerAs: 'ctrl'
       })
+      .when('/scanner', {
+        templateUrl: 'views/scanner.html',
+        controller: 'ScannerCtrl',
+        controllerAs: 'ctrl'
+      })
       .when('/profiles/:visitorId', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
