@@ -12,11 +12,12 @@ import eu.europa.ec.interhack.ebadge.qr.encode.Encoder;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingException;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions;
 import eu.europa.ec.interhack.ebadge.qr.encode.EncodingOptions.ImageType;
+import eu.europa.ec.interhack.ebadge.qr.pdf.PDFGeneratingException;
 import eu.europa.ec.interhack.ebadge.qr.pdf.PDFGenerator;
 
 public class QRTestApp {
 
-	public static void test(String[] args) throws EncodingException, DecodingException {
+	public static void main(String[] args) throws EncodingException, DecodingException, PDFGeneratingException {
 		String name = "" + new Random().nextInt(99);
 
 		EncodingOptions options = new EncodingOptions();
@@ -26,11 +27,11 @@ public class QRTestApp {
 		options.setForegroundColor(Color.BLACK);
 
 		String content = "1234-abcdef-001234-ab77ff5";
-		File out = Encoder.encode(content, name, "e:/tools/ws/out/", options);
+		File out = Encoder.encode("e:/tools/ws/out/", name, content, options);
 
-		String fileName = out.getAbsolutePath();
-		System.out.println(fileName);
-		String result = Decoder.decode(fileName);
+		String qrFileName = out.getAbsolutePath();
+		System.out.println(qrFileName);
+		String result = Decoder.decode(qrFileName);
 		System.out.println(result);
 
 		assert (result.compareTo(content) == 0);
@@ -41,6 +42,6 @@ public class QRTestApp {
 		userData.setVisitDate("2016-10-15");
 		userData.setExpirationDate("2016-10-25");
 		userData.setIdDocNumber("RO 123765");
-		PDFGenerator.generate(userData, fileName, Institution.EC);
+		PDFGenerator.generate("e:/tools/ws/out/", "01", userData, qrFileName, Institution.EC);
 	}
 }

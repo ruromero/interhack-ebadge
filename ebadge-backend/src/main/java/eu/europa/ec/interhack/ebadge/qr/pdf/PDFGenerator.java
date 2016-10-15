@@ -1,9 +1,7 @@
 package eu.europa.ec.interhack.ebadge.qr.pdf;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -21,10 +19,10 @@ import eu.europa.ec.interhack.ebadge.model.Visitor;
 
 public class PDFGenerator {
 
-	public static void generate(Visitor userData, String qrImagePath, Institution institution) {
+	public static void generate(String outputDirectory, String fileName, Visitor userData, String qrImagePath, Institution institution) throws PDFGeneratingException {
 		Document document = new Document(PageSize.A4);
 		try {
-			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("e:/tools/ws/out/01.pdf"));
+			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(outputDirectory + fileName + ".pdf"));
 			document.open();
 
 			BaseFont bf = BaseFont.createFont();
@@ -47,28 +45,19 @@ public class PDFGenerator {
 			Font font = FontFactory.getFont("Arial", 14);
 			document.add(new Paragraph(100, "Temporary Badge", font));
 			document.add(new Paragraph("Expires: " + userData.getExpirationDate(), font));
-			
+
 			font.setSize(22);
 			document.add(new Paragraph(userData.getFirstName() + " " + userData.getLastName().toUpperCase(), font));
 			document.add(new Paragraph(userData.getIdDocNumber(), font));
 
 			Image qr = Image.getInstance(qrImagePath);
 			qr.setAlignment(PdfContentByte.ALIGN_CENTER);
-			//qr.setAbsolutePosition((PageSize.A4.getWidth() - qr.getScaledWidth()) / 2, (PageSize.A4.getHeight() - qr.getScaledHeight()) / 2);
 			document.add(qr);
 
 			document.close();
 			writer.close();
-		} catch (DocumentException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (DocumentException | IOException e) {
+			throw new PDFGeneratingException("Error generating PDF: " + e.getMessage(), e);
 		}
 	}
 

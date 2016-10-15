@@ -17,7 +17,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
 
 public class Encoder {
 
-	public static File encode(String content, String fileName, String outputDirectory, EncodingOptions options) throws EncodingException {
+	public static File encode(String outputDirectory, String fileName, String content, EncodingOptions options) throws EncodingException {
 		if (fileName == null || "".equals(fileName) || outputDirectory == null || "".equals(outputDirectory)) {
 			throw new IllegalArgumentException("File name and output directory need to be specified!");
 		}
