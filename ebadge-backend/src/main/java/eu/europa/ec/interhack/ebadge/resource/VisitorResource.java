@@ -51,7 +51,7 @@ public class VisitorResource {
 		
 		// If we have missing fields send an error, otherwise push into DB and return a success
 		if (errors.size() > 0){
-			return new VisitorResponse("ERROR: "+StringUtils.join(errors.toArray(new String[]{}), ", "));
+			return new VisitorResponse("NOK").setComment(StringUtils.join(errors.toArray(new String[]{}), ", "));
 		} else {
 			// Save it to the DB
 			visitor.setStatus("PENDING");
@@ -103,9 +103,13 @@ public class VisitorResource {
 	@RequestMapping(value = "/reject", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse reject(@RequestParam(value = "visitor") Visitor visitor) {
 
-		// TODO handle rejection
 		visitor.setStatus("REJECTED");
 		repo.save(visitor);
+		
+		// Send mail and notify the visitor of rejection
+//		new MailSender().sendEma
+		String mailSubject = "Your request to visit the European insititutions has been rejected";
+		String mailBody = String.format("Dear %s,\\n\\nYour request to visit %s has been rejected.\\n\\nKind regards,\\nThe eBadge wizards",  String.format("%s %s", visitor.getFirstName(), visitor.getLastName()), visitor.getHost());
 		
 		return new VisitorResponse("OK");
 	}
