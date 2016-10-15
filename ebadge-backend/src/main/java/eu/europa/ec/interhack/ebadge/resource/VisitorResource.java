@@ -110,9 +110,9 @@ public class VisitorResource {
 
 		// send email shipping the QR code and PDF
 		String mailBody = String.format(
-				"Dear %s,<br><br>" + "Please hereby be kindly informed that your access for the visit has been approved.<br>"
-						+ "Find in attachment the QR code with the information of your request for your convenience (needed for the electronic access to the building - using your mobile).<br>"
-						+ "Please find also attached a PDF containing the QR should you need to print it out.<br><br>" + "Kind regards,<br>" + "The eBadge wizards",
+				"Dear %s,\r\n\r\n" + "Please hereby be kindly informed that your access for the visit has been approved.\r\n"
+						+ "Find in attachment the QR code with the information of your request for your convenience (needed for the electronic access to the building - using your mobile).\r\n"
+						+ "Please find also attached a PDF containing the QR should you need to print it out.\r\n\r\n" + "Kind regards,\r\n" + "The eBadge wizards",
 				String.format("%s %s", visitor.getFirstName(), visitor.getLastName()));
 
 		new MailSender().sendEmail(visitor.getEmail(), "Your eBadge is ready", mailBody, out.getAbsolutePath(), pdfFile.getAbsolutePath());
@@ -135,7 +135,7 @@ public class VisitorResource {
 
 		// Send mail and notify the visitor of rejection
 		String mailSubject = "Your request to visit the European insititutions has been rejected";
-		String mailBody = String.format("Dear %s,<br><br>Your request to visit %s has been rejected.<br><br>Kind regards,<br>The eBadge wizards",
+		String mailBody = String.format("Dear %s,\r\n\r\nYour request to visit %s has been rejected.\r\n\r\nKind regards,\r\nThe eBadge wizards",
 				String.format("%s %s", visitor.getFirstName(), visitor.getLastName()), visitor.getHost());
 		new MailSender().sendEmail(visitor.getEmail(), mailSubject, mailBody);
 
