@@ -21,7 +21,7 @@ echo "=================================================="
 cd /project/ebadge-backend
 mvn clean package
 
-cp /project/scripts/ /home/vagrant
+cp /project/scripts/* /home/vagrant
 chmod +x /home/vagrant/*.sh
 
 echo "=================================================="
