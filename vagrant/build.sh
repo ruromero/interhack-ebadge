@@ -21,8 +21,16 @@ echo "=================================================="
 cd /project/ebadge-backend
 mvn clean package
 
+echo "=================================================="
+echo "Copy scripts to user home"
+echo "=================================================="
 cp /project/scripts/* /home/vagrant
 chmod +x /home/vagrant/*.sh
+
+echo "=================================================="
+echo "Populate MongoDB with test data"
+echo "=================================================="
+mongoimport -h localhost:32768 -d ebadge -c building --jsonArray /project/test/premises.json
 
 echo "=================================================="
 echo "============= BUILD COMPLETE =============="

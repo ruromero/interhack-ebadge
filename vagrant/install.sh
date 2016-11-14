@@ -70,6 +70,11 @@ apt-get install -y git
 git --version
 
 echo "=================================================="
+echo "INSTALL MongoDB client from repository"
+echo "=================================================="
+apt-get install -y mongodb-clients
+
+echo "=================================================="
 echo "INSTALL NodeJS from repository"
 echo "=================================================="
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
