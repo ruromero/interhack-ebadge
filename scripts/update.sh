@@ -1,8 +1,8 @@
 #!/bin/bash
-cd ..
+cd /project
 git pull origin master
-cd ebadge-backend
+cd /project/ebadge-backend
 mvn clean package
-cd ../ebadge-frontend
+cd /project/ebadge-frontend
 grunt build
-cd ../scripts
+cd

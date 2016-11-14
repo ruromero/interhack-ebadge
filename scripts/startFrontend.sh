@@ -1,6 +1,6 @@
 #!/bin/bash
-cd ../ebadge-frontend
-grunt serve > ../scripts/frontend.out 2>&1 &
+cd /project/ebadge-frontend
+grunt serve > ~/frontend.out 2>&1 &
 PID=$!
-cd ../scripts
-echo $PID > frontend.pid
+echo $PID > ~/frontend.pid
+cd

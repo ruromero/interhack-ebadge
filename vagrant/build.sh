@@ -21,6 +21,9 @@ echo "=================================================="
 cd /project/ebadge-backend
 mvn clean package
 
+cp /project/scripts/ /home/vagrant
+chmod +x /home/vagrant/*.sh
+
 echo "=================================================="
 echo "============= BUILD COMPLETE =============="
 echo "=================================================="
@@ -30,15 +33,14 @@ echo "=================================================="
 echo "Connect: vagrant ssh"
 echo "=================================================="
 echo "ebadge-frontend:"
-echo "  cd /project/ebadge-frontend"
-echo "  grunt serve"
+echo "  ./startFrontend.sh"
+echo "  ./stopFrontend.sh"
 echo "Access the application on:" 
 echo "   http://192.168.99.100:9000"
 echo "=================================================="
 echo "ebadge-backend:"
-echo "  cd /project/ebadge-backend"
-echo "  java -jar target/ebadge-backend.jar"
+echo "  ./startBackend.sh"
+echo "  ./stopBackend.sh"
 echo "Access the application on:" 
-echo "   http://192.168.99.100:8080/hello"
 echo "   http://192.168.99.100:8080/rest/requests"
 echo "=================================================="
