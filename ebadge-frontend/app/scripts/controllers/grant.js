@@ -9,17 +9,17 @@
  */
 angular.module('ebadgeFrontendApp')
   .controller('GrantCtrl', [ 'backEnd', function (backEnd) {
-    backEnd.call('GET', 'visitors').then((response) => {
-      this.requests = response._embedded.visitors.filter((visitor) => {
+    backEnd.call('GET', 'visitors').then(function(response) {
+      this.requests = response._embedded.visitors.filter(function(visitor) {
         return visitor.status === 'PENDING';
       });
     });
 
     this.accept = function (request) {
-      backEnd.call('POST', 'visitor/accept', { visitorId: request.visitorId }).then((response) => {
+      backEnd.call('POST', 'visitor/accept', { visitorId: request.visitorId }).then(function(response) {
         console.log(response)
-        backEnd.call('GET', 'visitors').then((response) => {
-          this.requests = response._embedded.visitors.filter((visitor) => {
+        backEnd.call('GET', 'visitors').then(function(response) {
+          this.requests = response._embedded.visitors.filter(function(visitor) {
             return visitor.status === 'PENDING';
           });
         });
@@ -27,9 +27,9 @@ angular.module('ebadgeFrontendApp')
     };
 
     this.reject = function (request) {
-      backEnd.call('POST', 'visitor/reject', { visitorId: request.visitorId }).then((response) => {
-        backEnd.call('GET', 'visitors').then((response) => {
-          this.requests = response._embedded.visitors.filter((visitor) => {
+      backEnd.call('POST', 'visitor/reject', { visitorId: request.visitorId }).then(function(response) {
+        backEnd.call('GET', 'visitors').then(function(response) {
+          this.requests = response._embedded.visitors.filter(function(visitor) {
             return visitor.status === 'PENDING';
           });
         });
