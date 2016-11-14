@@ -14,10 +14,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "eu.europa.ec.interhack.ebadge.repository")
 public class MongoDBConfig extends AbstractMongoConfiguration {
 
-    @Value("${mongo.host")
+    @Value("${mongo.host}")
     private String host;
 
-    @Value("${mongo.port")
+    @Value("${mongo.port}")
     private int port;
 
     @Override
