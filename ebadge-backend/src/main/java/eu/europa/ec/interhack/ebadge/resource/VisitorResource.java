@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+import eu.europa.ec.interhack.ebadge.service.MailService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,6 +38,9 @@ public class VisitorResource {
 
 	@Autowired
 	private VisitorRepository repo;
+
+	@Autowired
+	private MailService mailService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public VisitorResponse register(@RequestBody Visitor visitor) {
@@ -115,7 +119,7 @@ public class VisitorResource {
 						+ "Please find also attached a PDF containing the QR should you need to print it out.\r\n\r\n" + "Kind regards,\r\n" + "The eBadge wizards",
 				String.format("%s %s", visitor.getFirstName(), visitor.getLastName()));
 
-		new MailSender().sendEmail(visitor.getEmail(), "Your eBadge is ready", mailBody, out.getAbsolutePath(), pdfFile.getAbsolutePath());
+		mailService.sendEmail(visitor.getEmail(), "Your eBadge is ready", mailBody, out.getAbsolutePath(), pdfFile.getAbsolutePath());
 
 		return new VisitorResponse("OK");
 	}
@@ -137,7 +141,7 @@ public class VisitorResource {
 		String mailSubject = "Your request to visit the European insititutions has been rejected";
 		String mailBody = String.format("Dear %s,\r\n\r\nYour request to visit %s has been rejected.\r\n\r\nKind regards,\r\nThe eBadge wizards",
 				String.format("%s %s", visitor.getFirstName(), visitor.getLastName()), visitor.getHost());
-		new MailSender().sendEmail(visitor.getEmail(), mailSubject, mailBody);
+		mailService.sendEmail(visitor.getEmail(), mailSubject, mailBody);
 
 		return new VisitorResponse("OK");
 	}

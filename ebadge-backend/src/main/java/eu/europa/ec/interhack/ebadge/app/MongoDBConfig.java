@@ -2,6 +2,7 @@ package eu.europa.ec.interhack.ebadge.app;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -13,6 +14,12 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "eu.europa.ec.interhack.ebadge.repository")
 public class MongoDBConfig extends AbstractMongoConfiguration {
 
+    @Value("${mongo.host")
+    private String host;
+
+    @Value("${mongo.port")
+    private int port;
+
     @Override
     protected String getDatabaseName() {
         return "ebadge";
@@ -20,6 +27,6 @@ public class MongoDBConfig extends AbstractMongoConfiguration {
 
     @Override
     public Mongo mongo() throws Exception {
-        return new MongoClient("localhost", 32768);
+        return new MongoClient(host, port);
     }
 }

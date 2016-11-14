@@ -1,33 +1,45 @@
-package eu.europa.ec.interhack.ebadge.resource;
+package eu.europa.ec.interhack.ebadge.service;
 
-import java.util.Properties;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.annotation.PostConstruct;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.util.Properties;
 
-public class MailSender {
+@Service
+public class MailService {
 
 	private static final String SUBJECT_PREFIX = "[eBadge - InterHack]";
-	
+
+	@Value("${email.username}")
+	private String username;
+
+	@Value("${email.password}")
+	private String password;
+
+	@Value("${email.host}")
+	private String host;
+
+	@Value("${email.port}")
+	private String port;
+
 	private Properties props;
 
-	public MailSender() {
+	@PostConstruct
+	private void configure() {
 		props = new Properties();
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
-		props.put("mail.smtp.host", "smtp.sendgrid.net");
-		props.put("mail.smtp.port", "25");
+		props.put("mail.smtp.host", host);
+		props.put("mail.smtp.port", port);
 	}
 
 	public void sendEmail(String toEmail, String subject, String content, String qrCodeFile, String pdfFile) {
@@ -35,13 +47,13 @@ public class MailSender {
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("azure_29d137e2b8785ad1119f54150755dbb5@azure.com", "InterHack2016_smtp");
+				return new PasswordAuthentication(username, password);
 			}
 		});
 
 		try {
 			MimeMessage message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
+			message.setFrom(new InternetAddress(username));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
 			message.setSubject(SUBJECT_PREFIX + subject);
 			message.setText(content);
@@ -77,22 +89,18 @@ public class MailSender {
 		}
 	}
 	
-	public void sendEmail(String toEmail, String subject) {
-		sendEmail(toEmail, subject, "Dear Mail Crawler," + "\n\n No spam to my email, please!");
-	}
-	
 	public void sendEmail(String toEmail, String subject, String body) {
 		System.out.println("preparing email...");
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("azure_29d137e2b8785ad1119f54150755dbb5@azure.com", "InterHack2016_smtp");
+				return new PasswordAuthentication(username, password);
 			}
 		});
 
 		try {
 			MimeMessage message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("ebadge-interhack@gmail.com"));
+			message.setFrom(new InternetAddress(username));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
 			message.setSubject(SUBJECT_PREFIX + subject);
 			message.setText(body);
