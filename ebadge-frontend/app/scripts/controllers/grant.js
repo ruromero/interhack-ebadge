@@ -9,27 +9,30 @@
  */
 angular.module('ebadgeFrontendApp')
   .controller('GrantCtrl', [ 'backEnd', function (backEnd) {
+    
+    var ctrl = this;
+
     backEnd.call('GET', 'visitors').then(function(response) {
-      this.requests = response._embedded.visitors.filter(function(visitor) {
+      ctrl.requests = response._embedded.visitors.filter(function(visitor) {
         return visitor.status === 'PENDING';
       });
     });
 
-    this.accept = function (request) {
+    ctrl.accept = function (request) {
       backEnd.call('POST', 'visitor/accept', { visitorId: request.visitorId }).then(function(response) {
         console.log(response)
         backEnd.call('GET', 'visitors').then(function(response) {
-          this.requests = response._embedded.visitors.filter(function(visitor) {
+          ctrl.requests = response._embedded.visitors.filter(function(visitor) {
             return visitor.status === 'PENDING';
           });
         });
       });
     };
 
-    this.reject = function (request) {
+    ctrl.reject = function (request) {
       backEnd.call('POST', 'visitor/reject', { visitorId: request.visitorId }).then(function(response) {
         backEnd.call('GET', 'visitors').then(function(response) {
-          this.requests = response._embedded.visitors.filter(function(visitor) {
+          ctrl.requests = response._embedded.visitors.filter(function(visitor) {
             return visitor.status === 'PENDING';
           });
         });

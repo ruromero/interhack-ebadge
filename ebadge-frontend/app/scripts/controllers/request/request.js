@@ -9,9 +9,11 @@
  */
 angular.module('ebadgeFrontendApp')
   .controller('RequestCtrl', [ '$location',  'backEnd', function ($location, backEnd) {
-    this.selectedBuilding = { name: 'Select a building' };
+    var ctrl = this;
+    
+    ctrl.selectedBuilding = { name: 'Select a building' };
 
-    this.model = {
+    ctrl.model = {
       firstName: 'Enzo',
       lastName: 'Voort',
       email: 'antdim@gmail.com',
@@ -23,15 +25,15 @@ angular.module('ebadgeFrontendApp')
     }
 
     backEnd.call('GET', 'buildings').then(function(response) {
-      this.buildings = response._embedded.buildings;
+      ctrl.buildings = response._embedded.buildings;
     });
 
-    this.buildingSelected = function (building) {
-      this.selectedBuilding = building;
+    ctrl.buildingSelected = function (building) {
+      ctrl.selectedBuilding = building;
     }
 
-    this.submit = function () {
-      backEnd.call('POST', 'visitor/register', this.model).then(function(response) {
+    ctrl.submit = function () {
+      backEnd.call('POST', 'visitor/register', ctrl.model).then(function(response) {
         $location.path('/status/ok');
       });
     }
